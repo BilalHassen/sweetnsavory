@@ -1,0 +1,20 @@
+/* Font faces (served from /public via Vite) */
+
+/* Display font — headings / brand */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../../assets/fonts/PlayfairDisplay-VariableFont_wght.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* Body font — UI / navigation / paragraphs */
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('../../assets/fonts/SourceSans3-VariableFont_wght.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
