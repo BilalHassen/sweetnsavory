@@ -1,0 +1,45 @@
+// Sweet & Savory — Design Tokens (Colors)
+// Use these variables everywhere instead of hard-coding colors.
+
+// Primary brand colors
+$color-caramel: hsl(32, 80%, 45%);
+$color-burgundy: hsl(350, 45%, 35%);
+$color-sage: hsl(140, 25%, 45%);
+$color-charcoal: hsl(20, 15%, 15%);
+
+// Extended palette
+$color-caramel-light: hsl(32, 80%, 65%);
+$color-caramel-dark: hsl(32, 80%, 30%);
+$color-burgundy-light: hsl(350, 45%, 50%);
+$color-sage-light: hsl(140, 25%, 75%);
+$color-taupe: hsl(35, 12%, 65%);
+
+// Neutral / UI colors
+$color-cream: hsl(40, 25%, 96%); // Background (Cream)
+$color-warm-white: hsl(40, 20%, 98%); // Cards (Warm White)
+$color-muted: hsl(30, 10%, 92%); // Subtle surfaces
+$color-border: hsl(30, 12%, 86%); // Borders/dividers
+
+// Helpful aliases (semantic names)
+$color-bg: $color-cream;
+$color-surface: $color-warm-white;
+$color-text: $color-charcoal;
+$color-accent: $color-caramel;
+
+// Optional: palette map for programmatic access
+$palette: (
+  "caramel": $color-caramel,
+  "burgundy": $color-burgundy,
+  "sage": $color-sage,
+  "charcoal": $color-charcoal,
+  "caramel-light": $color-caramel-light,
+  "caramel-dark": $color-caramel-dark,
+  "burgundy-light": $color-burgundy-light,
+  "sage-light": $color-sage-light,
+  "taupe": $color-taupe,
+  "cream": $color-cream,
+  "warm-white": $color-warm-white,
+  "muted": $color-muted,
+  "border": $color-border,
+);
+
