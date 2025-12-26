@@ -1,5 +1,5 @@
 import { Menu } from "@headlessui/react";
-import { menuData } from "../Nav/navMenuData";
+import { menuData } from "../../navMenuData";
 import { Phone } from "lucide-react";
 import "./MobileMenu.scss";
 function MobileMenu() {

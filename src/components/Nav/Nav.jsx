@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Menu as MenuIcon, X as XIcon } from "lucide-react";
 import { menuData } from "./navMenuData";
-import MobileMenu from "../MobileMenu/MobileMenu";
+import MobileMenu from "./components/MobileMenu/MobileMenu";
 import "./Nav.scss";
 
 const logoSrc = `${import.meta.env.BASE_URL}assets/images/logo.png`;
