@@ -1,0 +1,50 @@
+
+@use "../../styles/partials/variables" as *;
+
+.nav{
+  &__item-text{
+    color: $color-charcoal;
+  }
+
+  &__item-text.phone{
+    color: grey;
+  }
+
+  &__item-text{
+    font-size: 1.6rem;
+    transition: color 250ms ease;
+  }
+
+  &__phoneWrapper{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.nav__item:focus,
+.nav__item:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.order{
+  background-color: $color-caramel-light;
+  padding: .6rem;
+  width: 100%; 
+  text-align: center;
+  border-radius: 4px;
+  color: white;
+}
+
+.is-active:hover{
+  color: $color-caramel-light
+}
+
+.nav__item.order{
+  transition: transform 0.2s ease;
+}
+
+.nav__item.order:hover{
+ transform: scale(1.02);}
+
