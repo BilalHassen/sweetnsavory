@@ -1,11 +1,16 @@
 import './App.css'
+import Nav from './components/Nav/Nav.jsx'
+
 
 function App() {
   return (
-    <main className="app">
-      <h1>Sweet &amp; Savory</h1>
-      <p className="subtitle">Your app is ready. Start building your menu.</p>
-    </main>
+    <>
+      <Nav />
+      <main className="app">
+        <h1>Sweet &amp; Savory</h1>
+        <p className="subtitle">Your app is ready. Start building your menu.</p>
+      </main>
+    </>
   )
 }
 
