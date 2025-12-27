@@ -1,0 +1,58 @@
+@use "../../../../styles/partials/variables" as *;
+@use "../../../../styles/partials/mixins" as *;
+
+.nav{
+    &__largeMenu{
+        display: flex;
+        align-items: center;
+        gap: 2rem
+    }
+    &__largeMenu-text{
+        font-size: 2rem;
+    }
+
+    &__largeMenu-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    &__largeMenu-item.phone{
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &__largeMenu-item.phone &__largeMenu-text{
+        white-space: nowrap;
+    }
+
+    &__largeMenu-item{
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    &__largeMenu-item:hover{
+        color: $color-caramel-light;
+    }
+}
+
+@include tablet-small{
+.orderBtn{
+    background-color: $color-caramel-light;
+    text-align: center;
+    border-radius: 12px;
+    color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.orderBtn:hover{
+    color: black;
+    transform: scale(1.05);
+}
+}
