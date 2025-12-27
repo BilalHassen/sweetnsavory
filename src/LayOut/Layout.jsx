@@ -1,9 +1,10 @@
-import React from 'react'
-import Nav from '../components/Nav/Nav'
+import Nav from "@components/Nav/Nav";
+import "./Layout.scss";
+
 function Layout({children}) {
   return (
     <>
-<Nav/>
+ <Nav/>
     <div className='layout'>
         <main className="layout__wrapper">{children}</main>
     </div>
