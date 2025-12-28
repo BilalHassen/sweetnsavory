@@ -1,7 +1,7 @@
 import "./Main.scss";
+import Button from "../ui/components/button/Button";
 function Main() {
   const heroBg = `${import.meta.env.BASE_URL}assets/images/hero.jpg`;
-
   return (
     <main>
       <section
@@ -10,48 +10,30 @@ function Main() {
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="hero__overlay" aria-hidden="true"></div>
-  
-        <div className="hero__container">
-          <p className="hero__badge">Handcrafted with Love Since 1985</p>
-  
-          <h1 id="hero-title" className="hero__title">
-            Sweet &amp; Savory<br />
-            <span className="hero__titleAccent">Artisan Pies</span>
+        <Button className="hero__btn" variant="ghost" size="sm">
+          <span className="hero__btn-text">Hand Crafted with Love since 1997</span>
+        </Button>
+
+        <div className="hero__contentBox">
+          <h1 className="hero__title">
+            SweetNSavoury <br />
+            <span className="hero__subTitle">South African Pies</span>
           </h1>
-  
-          <p className="hero__lead">
-            From golden-crusted fruit pies to hearty savory classics, every pie is
-            made fresh daily with locally-sourced ingredients and generations of
-            baking expertise.
+          <p className="hero__description">
+            From golden-crusted fruit pies to hearty savory classics, every pie
+            is made fresh daily with locally-sourced ingredients and generations
+            of baking expertise.
           </p>
-  
-          <div className="hero__actions">
-            <a className="btn btn--primary" href="/menu">
-              Explore Our Menu
-            </a>
-            <a className="btn btn--ghost" href="/order">
+          <div className="hero__btnContainer">
+            <Button variant="primary" size="md">Explore Our Menu</Button>
+            <Button className="hero__order-btn" variant="outline" size="md">
               Order for Pickup
-            </a>
+            </Button>
           </div>
-  
-          <dl className="hero__stats" aria-label="Business highlights">
-            <div className="hero__stat">
-              <dt>38+</dt>
-              <dd>Years of Baking</dd>
-            </div>
-            <div className="hero__stat">
-              <dt>50+</dt>
-              <dd>Pie Varieties</dd>
-            </div>
-            <div className="hero__stat">
-              <dt>1M+</dt>
-              <dd>Pies Served</dd>
-            </div>
-          </dl>
         </div>
       </section>
     </main>
-  )
+  );
 }
 
-export default Main
+export default Main;
