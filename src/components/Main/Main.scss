@@ -1,0 +1,111 @@
+.hero {
+    position: relative;
+  
+    /* This controls the hero height without hard-coding */
+    min-height: clamp(520px, 70vh, 860px);
+  
+    /* Image setup */
+    /* Set via inline style in `Main.jsx` so it respects Vite's BASE_URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    display: flex;
+    align-items: flex-end; /* keeps content sitting lower like your screenshot */
+  }
+  
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+  
+    /* dark gradient so text is readable */
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.60) 0%,
+      rgba(0, 0, 0, 0.25) 55%,
+      rgba(0, 0, 0, 0.05) 100%
+    );
+  }
+  
+  .hero__container {
+    position: relative; /* above overlay */
+    width: min(1100px, 100%);
+    margin-inline: auto;
+    padding: clamp(24px, 4vw, 56px);
+    padding-bottom: clamp(28px, 6vw, 72px);
+    color: #fff;
+  }
+  
+  .hero__badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(6px);
+    font-size: 0.9rem;
+  }
+  
+  .hero__title {
+    margin: 14px 0 10px;
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+    line-height: 1.05;
+  }
+  
+  .hero__titleAccent {
+    color: #d5a25a; /* your warm accent */
+  }
+  
+  .hero__lead {
+    max-width: 52ch;
+    margin: 0 0 18px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+  }
+  
+  .hero__actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .btn--primary {
+    background: #c97a1b;
+    color: #fff;
+  }
+  
+  .btn--ghost {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.12);
+  }
+  
+  .hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 0;
+  }
+  
+  .hero__stat dt {
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+  
+  .hero__stat dd {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.95rem;
+  }
+  

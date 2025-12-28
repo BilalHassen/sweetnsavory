@@ -1,13 +1,12 @@
 import './App.css'
-import Nav from '@components/Nav/Nav.jsx'
 import Layout from '@/LayOut/Layout.jsx'
-
+import Main from '@components/Main/Main'
 function App() {
   return (
     
       
     <Layout>
-      
+      <Main />
     </Layout>
   )
 }
