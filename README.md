@@ -1,18 +1,62 @@
-# React + Vite
+# Sweet & Savoury (Client Site)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repo is the marketing site for **Sweet & Savoury** (South African pies). It’s a small React site built with Vite + Sass and a simple component structure so it’s easy to tweak during client feedback.
 
-Currently, two official plugins are available:
+## Run it locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+From the `sweetnsavory/` folder:
 
-## React Compiler
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Handy scripts
 
-Note: This will impact Vite dev & build performances.
+- **`npm run dev`**: start the dev server
+- **`npm run build`**: build for production (outputs to `dist/`)
+- **`npm run preview`**: preview the production build locally
+- **`npm run lint`**: run ESLint
 
-## Expanding the ESLint configuration
+## Where to make changes
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+If the client asks for wording/layout changes, these are the files you’ll touch most:
+
+- **Hero content + CTA buttons**: `src/components/Main/Main.jsx`
+- **Hero styling**: `src/components/Main/Main.scss`
+- **Nav links / menu data**: `src/components/Nav/navMenuData.js`
+- **Overall page wrapper**: `src/LayOut/Layout.jsx`
+
+## Images (logo, hero, product photos)
+
+Images are served from:
+
+- `public/assets/images/`
+
+This project uses Vite’s `BASE_URL` when building image paths so it still works if the site is deployed under a sub-path (not just `/`). Example:
+
+```js
+const heroBg = `${import.meta.env.BASE_URL}assets/images/hero.jpg`
+```
+
+Easiest way to swap an image is to **keep the same filename** (e.g. replace `logo.png` with a new `logo.png`). Otherwise, update the path where it’s used.
+
+## Folder map (quick)
+
+```text
+src/
+  components/        Reusable UI + page sections (Nav, Main, etc.)
+  LayOut/            App layout wrapper
+  styles/            Global Sass + partials (variables/mixins)
+public/
+  assets/images/     Static images served as-is
+```
+
+## Deploy notes
+
+- Vite outputs the production build to `dist/`.
+- If you deploy under a subpath, make sure the host is configured for SPA routing + the correct base path.
+
+## Handoff checklist
+
+When handing this project to someone else, share:
