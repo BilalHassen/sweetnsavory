@@ -1,60 +1,41 @@
 @use "../../../../styles/partials/variables" as *;
 @use "sass:color";
 
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+// base button styling for every button
+.btn{
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s ease, opacity 0.2s ease;
 
-  border-radius: 20px;
-  border: 1px solid transparent;
-  cursor: pointer;
-
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1;
-  text-decoration: none;
-
-  transition: background-color 160ms ease, border-color 160ms ease, transform 120ms ease;
-
-  &:disabled {
-    opacity: 0.55;
-    cursor: not-allowed;
-  }
-
-  &:active:not(:disabled) {
-    transform: translateY(1px);
-  }
 }
 
-/* Sizes */
-.button--sm {
-  padding: 0.6rem 1.2rem;
+
+.btn--outline-orange{
+    background-color: color.change($color-caramel-light, $alpha: 0.3);
+    border: 1px solid $color-caramel-dark;
+    max-width: 25rem;
+    padding: .6rem;
+    border-radius: 40px;
+
 }
 
-.button--md {
-  padding: 0.9rem 1.6rem;
+.btn--white-outline{
+    border: 1px solid white;
+    color: white;
 }
 
-.button--lg {
-  padding: 1.1rem 2rem;
+.btn--primary{
+    background-color: $color-caramel-light;
+    color: white;
 }
 
-/* Variants */
-.button--primary {
-  background-color: $color-caramel-light;
-  color: white;
-}
-
-.button--outline {
-  background-color: transparent;
-  border-color: $color-caramel;
-  color: white;
-}
-
-.button--ghost {
-  background-color: color.change($color-caramel-light, $alpha: 0.25);
-  border-color: color.change($color-caramel, $alpha: 0.55);
-  color: white;
+// sizes for buttons
+.btn--reg{
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    font-size: 1.6rem;
+    font-weight: 400;
 }

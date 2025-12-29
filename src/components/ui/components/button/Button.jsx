@@ -3,17 +3,22 @@ import "./Button.scss";
 function Button({
   children,
   className = "",
-  variant = "primary",
-  size = "md",
+  variant,
+  size,
   type = "button",
   ...props
 }) {
+  const classes = [
+    "btn",
+    variant ? `btn--${variant}` : "",
+    size ? `btn--${size}` : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <button
-      type={type}
-      className={`button button--${variant} button--${size} ${className}`}
-      {...props}
-    >
+    <button type={type} className={classes} {...props}>
       {children}
     </button>
   );
