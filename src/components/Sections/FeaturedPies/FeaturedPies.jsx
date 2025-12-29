@@ -1,8 +1,8 @@
 import React from 'react'
-
+import ".FeaturedPies.scss";
 function FeaturedPies() {
   return (
-    <div>FeaturedPies</div>
+    <section className='featured'></section>
   )
 }
 
