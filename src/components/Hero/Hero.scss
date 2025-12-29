@@ -1,0 +1,95 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "sass:color";
+.hero {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: clamp(520px, 80vh, 860px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 1.6rem;
+    display: flex;
+    align-items: center;
+    @include tablet-small{
+      padding: 2.4rem;
+    }
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+      
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.70) 0%,
+          rgba(0, 0, 0, 0.60) 55%,
+          rgba(0, 0, 0, 0.50) 75%,
+          rgba(0, 0, 0, 0.20) 100%
+        );
+      }
+
+      &__title {
+        font-size: 4rem;
+        color: white;
+        margin-bottom: 3rem;
+        @include tablet-small{
+          font-size: 7.2rem;
+        }
+      }
+
+      &__subTitle {
+        color: #e9aa63;
+        @include tablet-small{
+          font-size: 5rem;
+        }
+      }
+
+      &__description {
+        font-size: 1.8rem;
+        color: white;
+        font-weight: 200;
+        line-height: 2.5rem;
+      }
+
+      &__inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        width: 100%;
+      }
+
+      &__btn-text {
+        color: white;
+        font-size: 1.4rem;
+        @include tablet-small{
+          font-size: 1.8rem;
+        }
+      }
+
+      &__btnContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        @include tablet-small{
+          flex-direction: row;
+          gap: 2rem;
+        }
+      }
+
+      &__flag {
+        width: 32px;
+        height: auto;
+        margin-left: 0.8rem;
+        vertical-align: middle;
+        border-radius: 4px;
+
+        @include tablet-small{
+          width: 40px;
+        }
+      }
+  }
