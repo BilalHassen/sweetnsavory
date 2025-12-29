@@ -1,18 +1,75 @@
-# React + Vite
+# Sweet & Savoury — Client Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marketing website for **Sweet & Savoury** (South African pies). Built as a client project with **React + Vite** and **Sass**.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: React
+- **Build tool**: Vite
+- **Styling**: Sass (`.scss`)
+- **Icons/UI**: `lucide-react`, `@headlessui/react`
 
-## React Compiler
+## Getting started (local dev)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+From the project directory:
 
-Note: This will impact Vite dev & build performances.
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Scripts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **dev**: `npm run dev` — start local development server
+- **build**: `npm run build` — production build (outputs to `dist/`)
+- **preview**: `npm run preview` — preview the production build locally
+- **lint**: `npm run lint` — run ESLint
+
+## Editing site content
+
+Common places you’ll update during client iterations:
+
+- **Hero section (headline, buttons, flag)**: `src/components/Main/Main.jsx`
+- **Hero styles**: `src/components/Main/Main.scss`
+- **Navigation/menu items**: `src/components/Nav/navMenuData.js`
+- **Layout wrapper**: `src/LayOut/Layout.jsx`
+
+### Images (logos, hero, product photos)
+
+Static images live in:
+
+- `public/assets/images/`
+
+They can be referenced via Vite’s `BASE_URL` so deployments under a subpath still work. Example pattern used in the app:
+
+```js
+const heroBg = `${import.meta.env.BASE_URL}assets/images/hero.jpg`
+```
+
+To replace an image, keep the same filename (e.g. `logo.png`, `hero.jpg`) to avoid touching code, or update the import/path where it’s used.
+
+## Project structure (high level)
+
+```text
+src/
+  components/        Reusable UI + page sections (Nav, Main, etc.)
+  LayOut/            App layout wrapper
+  styles/            Global Sass + partials (variables/mixins)
+public/
+  assets/images/     Static images served as-is
+```
+
+## Deployment notes
+
+This is a standard Vite app:
+
+- Build output is generated in `dist/`
+- If you deploy under a subpath (not a root domain), ensure your host is configured to serve the app from the correct base path.
+
+## Client handoff
+
+If you’re handing this off to another developer, provide:
+
+- The deployment target (Netlify/Vercel/custom hosting)
+- Any required environment/base path details
+- Where content updates will be coming from (static edits vs CMS later)
