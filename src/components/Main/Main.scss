@@ -2,45 +2,75 @@
 @use "sass:color";
 .hero {
     position: relative;
-    
-    /* This controls the hero height without hard-coding */
-    min-height: clamp(520px, 70vh, 860px);
-  
-    /* Image setup */
-    /* Set via inline style in `Main.jsx` so it respects Vite's BASE_URL */
+    isolation: isolate;
+    width: 100%;
+    min-height: clamp(520px, 80vh, 860px);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 1.6rem;
   
+    display: flex;
+    align-items: center;
 
     &__overlay {
         position: absolute;
         inset: 0;
-        width: 100%;
-        z-index: 0;
+        z-index: -1;
+        pointer-events: none;
       
-        /* dark gradient so text is readable */
         background: linear-gradient(
           90deg,
-          rgba(0, 0, 0, 0.2) 0%,
-          rgba(0, 0, 0, 0.1) 55%,
-          rgba(0, 0, 0, 0.05) 100%
+          rgba(0, 0, 0, 0.70) 0%,
+          rgba(0, 0, 0, 0.60) 55%,
+          rgba(0, 0, 0, 0.50) 75%,
+          rgba(0, 0, 0, 0.20) 100%
         );
       }
-   
-      &__btn{
-         position: relative;
-         z-index: 1; /* above overlay */
-      }
-      
-      &__btn-text{
-        color: white;
-        font-size: 1.6rem;
-        }
-  }
-  
- 
-  
 
-  
- 
+      &__title {
+        font-size: 4rem;
+        color: white;
+        margin-bottom: 3rem;
+
+      }
+
+      &__subTitle {
+        color: #e9aa63;
+      }
+
+      &__description {
+        font-size: 1.8rem;
+        color: white;
+        font-weight: 200;
+        line-height: 2.5rem;
+      }
+
+      &__inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        width: 100%;
+      }
+
+      &__btn-text {
+        color: white;
+        font-size: 1.4rem;
+      }
+
+      &__btnContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      &__flag {
+        width: 32px;
+        height: auto;
+        margin-left: 0.8rem;
+        vertical-align: middle;
+        border-radius: 4px;
+      }
+  }
