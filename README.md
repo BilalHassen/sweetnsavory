@@ -1,54 +1,47 @@
-# Sweet & Savoury — Client Website
+# Sweet & Savoury (Client Site)
 
-Marketing website for **Sweet & Savoury** (South African pies). Built as a client project with **React + Vite** and **Sass**.
+This repo is the marketing site for **Sweet & Savoury** (South African pies). It’s a small React site built with Vite + Sass and a simple component structure so it’s easy to tweak during client feedback.
 
-## Tech stack
+## Run it locally
 
-- **Frontend**: React
-- **Build tool**: Vite
-- **Styling**: Sass (`.scss`)
-- **Icons/UI**: `lucide-react`, `@headlessui/react`
-
-## Getting started (local dev)
-
-From the project directory:
+From the `sweetnsavory/` folder:
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Scripts
+## Handy scripts
 
-- **dev**: `npm run dev` — start local development server
-- **build**: `npm run build` — production build (outputs to `dist/`)
-- **preview**: `npm run preview` — preview the production build locally
-- **lint**: `npm run lint` — run ESLint
+- **`npm run dev`**: start the dev server
+- **`npm run build`**: build for production (outputs to `dist/`)
+- **`npm run preview`**: preview the production build locally
+- **`npm run lint`**: run ESLint
 
-## Editing site content
+## Where to make changes
 
-Common places you’ll update during client iterations:
+If the client asks for wording/layout changes, these are the files you’ll touch most:
 
-- **Hero section (headline, buttons, flag)**: `src/components/Main/Main.jsx`
-- **Hero styles**: `src/components/Main/Main.scss`
-- **Navigation/menu items**: `src/components/Nav/navMenuData.js`
-- **Layout wrapper**: `src/LayOut/Layout.jsx`
+- **Hero content + CTA buttons**: `src/components/Main/Main.jsx`
+- **Hero styling**: `src/components/Main/Main.scss`
+- **Nav links / menu data**: `src/components/Nav/navMenuData.js`
+- **Overall page wrapper**: `src/LayOut/Layout.jsx`
 
-### Images (logos, hero, product photos)
+## Images (logo, hero, product photos)
 
-Static images live in:
+Images are served from:
 
 - `public/assets/images/`
 
-They can be referenced via Vite’s `BASE_URL` so deployments under a subpath still work. Example pattern used in the app:
+This project uses Vite’s `BASE_URL` when building image paths so it still works if the site is deployed under a sub-path (not just `/`). Example:
 
 ```js
 const heroBg = `${import.meta.env.BASE_URL}assets/images/hero.jpg`
 ```
 
-To replace an image, keep the same filename (e.g. `logo.png`, `hero.jpg`) to avoid touching code, or update the import/path where it’s used.
+Easiest way to swap an image is to **keep the same filename** (e.g. replace `logo.png` with a new `logo.png`). Otherwise, update the path where it’s used.
 
-## Project structure (high level)
+## Folder map (quick)
 
 ```text
 src/
@@ -59,17 +52,15 @@ public/
   assets/images/     Static images served as-is
 ```
 
-## Deployment notes
+## Deploy notes
 
-This is a standard Vite app:
+- Vite outputs the production build to `dist/`.
+- If you deploy under a subpath, make sure the host is configured for SPA routing + the correct base path.
 
-- Build output is generated in `dist/`
-- If you deploy under a subpath (not a root domain), ensure your host is configured to serve the app from the correct base path.
+## Handoff checklist
 
-## Client handoff
+When handing this project to someone else, share:
 
-If you’re handing this off to another developer, provide:
-
-- The deployment target (Netlify/Vercel/custom hosting)
-- Any required environment/base path details
-- Where content updates will be coming from (static edits vs CMS later)
+- Where it’s deployed (Netlify / Vercel / custom host)
+- The final domain + whether it’s hosted at `/` or a subpath
+- Who owns ongoing content updates (static edits vs CMS later)
