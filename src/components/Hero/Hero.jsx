@@ -13,7 +13,7 @@ function Hero() {
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="hero__overlay" aria-hidden="true" />
-
+<div className="layout__wrapper">
         <div className="hero__inner">
           <Button variant="outline-orange">
             <span className="hero__btn-text">
@@ -46,6 +46,7 @@ function Hero() {
             <span className="hero__btn-text">Order for Pickup</span>
             </Button>
           </div>
+        </div>
         </div>
       </section>
     </main>

@@ -9,12 +9,10 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 1.6rem;
+ 
     display: flex;
     align-items: center;
-    @include tablet-small{
-      padding: 2.4rem;
-    }
+    
 
     &__overlay {
         position: absolute;
@@ -61,6 +59,11 @@
         flex-direction: column;
         gap: 3rem;
         width: 100%;
+        max-width: 450px;
+
+        @include tablet-small{
+          max-width: 600px;
+        }
       }
 
       &__btn-text {
