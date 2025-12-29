@@ -1,12 +1,23 @@
-.layout{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@use "../styles/partials/mixins" as *;
 
-    &__wrapper{
-        width: 100%;
+.layout {
+  display: flex;
+  flex-direction: column;
+
+  &__wrapper {
+    width: 100%;
+    padding: 1.6rem;
+    margin: 0 auto;
+
+    @include tablet-small {
+      max-width: 860px;
+      padding-left: 3.4rem;
+      padding-right: 3.4rem;
     }
+
+    @include desktop-small {
+      max-width: 1400px;
+      padding: 8rem;
+    }
+  }
 }
-
-
