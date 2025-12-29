@@ -1,12 +1,12 @@
 import './App.css'
 import Layout from '@/LayOut/Layout.jsx'
-import Main from '@components/Main/Main'
+import Hero from '@/components/Hero/Hero'
 function App() {
   return (
     
       
     <Layout>
-      <Main />
+      <Hero />
     </Layout>
   )
 }
