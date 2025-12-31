@@ -1,8 +1,9 @@
 import React from 'react'
-
 function MainContent() {
   return (
-    <div>MainContent all the sites content will be rendered here</div>
+    <>
+      {/* Main page sections go here (content that should stay inside the Layout container) */}
+    </>
   )
 }
 

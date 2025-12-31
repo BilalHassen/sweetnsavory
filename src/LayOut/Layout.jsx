@@ -1,4 +1,5 @@
 import Nav from "@components/Nav/Nav";
+
 import "./Layout.scss";
 
 function Layout({children, fullBleed}) {
