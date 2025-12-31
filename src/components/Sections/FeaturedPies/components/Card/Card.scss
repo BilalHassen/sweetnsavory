@@ -1,0 +1,92 @@
+@use"../../../../../styles/partials/variables" as *;
+@use"../../../../../styles/partials/mixins" as *;
+.card {
+  border-radius: 12px; // rounds the entire card so it feels like a single surface
+  background-color: white; // card background (separate from image)
+  padding-bottom: 1rem; // spacing so content doesn’t hit the bottom edge
+
+  transition: transform 0.3s ease; // smooth lift animation on hover
+
+  &__imgContainer {
+    height: 210px; // fixed height so layout never shifts
+    background-position: center -70px; // initial image framing
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    padding-left: 1rem;
+    padding-top: 1rem; // space for button/text overlay
+
+    border-radius: 12px 12px 0 0; // match card corners on top only
+
+    position: relative; // anchor for ::before image layer
+    overflow: hidden; // IMPORTANT: clips the zoomed image so it stays inside the card
+  }
+
+  // Image lives on a pseudo-element so i can scale it
+  // without scaling the container itself
+  &__imgContainer::before {
+    content: ""; // required to make the pseudo-element exist
+    position: absolute;
+    inset: 0; // fill the entire img container
+
+    background-image: inherit; // reuse inline backgroundImage from React
+    background-position: center -70px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    transform: scale(1); // default (no zoom)
+    transition: transform 0.3s ease; // smooth zoom animation
+    will-change: transform; // performance  for hover animation
+  }
+
+  // Make sure buttons/text stay above the image layer
+  &__imgContainer > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  // When hovering the card, zoom the image only
+  // (container stays the same size)
+  &:hover &__imgContainer::before {
+    transform: scale(1.08);
+  }
+
+  &__textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem; // inner spacing for text content
+  }
+
+  &__btn-text {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  &__flexContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__price {
+    font-size: 1.8rem;
+    color: $color-caramel-light;
+  }
+
+  &__description {
+    font-size: 1.4rem;
+    font-weight: 370;
+    line-height: 1.6rem;
+  }
+}
+
+// Card lift effect
+// Separate from image zoom so transforms don’t fight each other
+.card:hover {
+  transform: scale(1.01) translateY(-4px);
+}

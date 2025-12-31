@@ -39,6 +39,12 @@
    
 }
 
+.btn--alternate{
+    background-color: $color-caramel-light;
+    color: white;
+    background-color: $color-sage;
+}
+
 .btn--primary:hover{
     transform: scale(1.05);
 }
@@ -50,4 +56,10 @@
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 1;  
+}
+
+.btn--small{
+   // your target height feel
+    padding: .5rem 1rem;      // horizontal padding consistent
+    
 }
