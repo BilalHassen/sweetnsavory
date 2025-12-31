@@ -3,26 +3,58 @@
 .featured{
     background-color: $color-cream;
     width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+
+    @include tablet-small{
+        min-width: 100%;
+    }
 
     &__piesList{
         display: flex;
         flex-direction: column;
         gap: 3rem;
+        align-items: stretch; /*all the items stretch 
+        to match the height of the tallest card*/
 
         @include tablet-small{
             flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2rem;
+                  
         }
+        
+    }
+
+    &__pies{
+        @include tablet-small {
+            flex: 0 0 calc(50% - 1rem);
+          }
+
+
+  @include desktop-small {
+    flex: 0 0 calc(25% - 1.5rem); // 4 per row
+  }
     }
 
     &__title{
         color: $color-caramel-dark;
         font-size: 3rem;
+
+        @include tablet-small{
+            font-size: 5rem;
+        }
     }
 
     &__statment{
         color: #7e6f67;
         font-size: 1.4rem;
         line-height: 2rem;
+
+        @include tablet-small{
+            font-size: 2rem;
+            font-weight: 340;
+        }
     }
 
     &__text-wrapper{
@@ -30,5 +62,10 @@
         flex-direction: column;
         text-align: center;
         gap: 2rem;
+
+        @include tablet-small{
+            max-width: 600px;
+            margin: 0 auto;
+        }
     }
 }
