@@ -4,13 +4,12 @@ import "./Card.scss";
 function Card({ name, description, img, category, price }) {
   // const cardBgImg = `${import.meta.env.BASE_URL}assets/images/img`;
   const btnVariant = category === "sweet" ? "primary" : "alternate";
-  console.log(img);
 
   return (
     <article className="card">
       <div
         className="card__imgContainer"
-        style={{ backgroundImage: `url(${img})` }}
+        style={{ "--card-img": `url(${img})` }}
       >
         <Button variant={btnVariant} size={"small"}>
           <span className="card__btn-text">{category}</span>
