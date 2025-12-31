@@ -1,0 +1,65 @@
+@use "../../../../styles/partials/variables" as *;
+@use "../../../../styles/partials/mixins" as *;
+@use "sass:color";
+
+// base button styling for every button
+.btn{
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease, opacity 0.3s ease, transform 1s ease;
+
+}
+
+
+.btn--outline-orange{
+    background-color: color.change($color-caramel-light, $alpha: 0.3);
+    border: 1px solid $color-caramel-dark;
+    max-width: 25rem;
+    padding: .6rem;
+    border-radius: 40px;    
+    @include tablet-small{
+        max-width: 30rem;
+    }
+}
+
+.btn--white-outline{
+    border: 1px solid white;
+    color: white;
+}
+
+.btn--white-outline:hover{
+    transform: scale(1.05);
+    background-color: $color-sage;
+}
+
+.btn--primary{
+    background-color: $color-caramel-light;
+    color: white;
+   
+}
+
+.btn--alternate{
+    background-color: $color-caramel-light;
+    color: white;
+    background-color: $color-sage;
+}
+
+.btn--primary:hover{
+    transform: scale(1.05);
+}
+
+// sizes for buttons
+.btn--reg{
+    min-height: 56px;     // your target height feel
+    padding: 0 50px;      // horizontal padding consistent
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1;  
+}
+
+.btn--small{
+   // your target height feel
+    padding: .5rem 1rem;      // horizontal padding consistent
+    
+}

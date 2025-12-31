@@ -16,8 +16,9 @@
   }
 
   @include desktop-small{
-    max-width: 1400px;
-    padding: 0;
+    max-width: 1600px;
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
 
 
