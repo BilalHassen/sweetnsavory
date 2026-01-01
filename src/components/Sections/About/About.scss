@@ -1,0 +1,71 @@
+@use "../../../styles/partials/variables" as *;
+
+.about{
+
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    &__title{
+        color: black;
+        width: 50%;
+        line-height: 3rem;
+    }
+    
+    &__subTitle{
+        color: $color-caramel-light;
+    }
+
+    &__img{
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__item{
+        display: flex;
+
+        gap: 1rem;
+    }
+
+    &__icon{
+        color: $color-caramel-light; 
+    }
+
+    &__iconContainer{
+        background-color: $color-cream;
+        display: flex;
+        height: fit-content;
+        padding: 1rem;
+        border-radius: 12px;
+        border: 1px solid $color-caramel-light;
+    }
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    &__textContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__header{
+        font-size: 1.6rem;
+    }
+
+    &__description{
+        font-size: 1.4rem;
+        font-weight: 380;
+        line-height: 2rem;
+    }
+    
+}

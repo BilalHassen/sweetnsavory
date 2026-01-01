@@ -10,10 +10,15 @@ body {
   overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color: $color-text;
   background: $color-bg;
+  font-size: 1.6rem;
 }
 
 h1,
@@ -155,7 +160,6 @@ span {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 62.5%;
 }
 
 ul {
