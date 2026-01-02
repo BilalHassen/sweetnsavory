@@ -1,25 +1,34 @@
 import React from "react";
 import "./About.scss";
 const aboutImg = `${import.meta.env.BASE_URL}assets/images/about.png`;
+const aboutImgLrg = `${import.meta.env.BASE_URL}assets/images/about-larger.png`;
 import { aboutItems } from "./AboutData";
-
+import useWidth from "@hooks/useWidth";
 function About() {
 
   console.log(aboutItems)
+  const width = useWidth()  
+  const imgSelect = width >= 768 ? aboutImgLrg : aboutImg
+ 
 
   return (
     <section className="about">
-      <img className="about__img" src={aboutImg} alt="About Sweet & Savoury" />
+      {/* <div className="about__media">
+  <img className="about__img" src={imgSelect} alt="About Sweet & Savoury" />
+</div> */}
+<img className="about__img" src={imgSelect} alt="About Sweet & Savoury" />
+
+      <div className="about__flexContainer">
       <div className="about__textContainer">
       <h2 className="about__title">
         Baking Traditions,<br/>
         <span className="about__subTitle">Creating Memories</span>
       </h2>
-      <p className="about__description">
+      <p className="about__description1">
         What started as a small family kitchen grew from a simple idea: make
         honest, great-tasting pastries the way we grew up enjoying them.
         Inspired by South African home cooking, our shop is built on tradition,
-        patience, and doing things properly, no shortcuts. <br/>Every pie is still
+        patience, and doing things properly, no shortcuts. <br className="about__br"/>Every pie is still
         made with care, from our rich, flaky pastry to our boldly seasoned
         savoury fillings and comforting sweet classics. It’s food meant to be
         shared, enjoyed, and remembered just like back home.
@@ -41,6 +50,7 @@ function About() {
           </div>
         </div>
         })}
+        </div>
 
 
   {/* <div className="about__item">
