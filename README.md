@@ -57,6 +57,4 @@ public/
 - Vite outputs the production build to `dist/`.
 - If you deploy under a subpath, make sure the host is configured for SPA routing + the correct base path.
 
-## Handoff checklist
 
-When handing this project to someone else, share:
