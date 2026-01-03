@@ -1,0 +1,52 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.sectionHeader {
+  // container spacing
+  padding: clamp(3rem, 6vw, 5.5rem) 1.5rem;
+  background: #f6f2ec; // match your screenshot tone
+  text-align: center;
+
+  // keeps text lines clean like your screenshot
+  max-width: 960px;
+  margin: 0 auto;
+
+  &--left {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  &__eyebrow {
+    margin: 0 0 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #c46a1b; // warm orange accent
+  }
+
+  &__title {
+    margin: 0 0 1rem;
+    font-weight: 700;
+    line-height: 1.05;
+
+    // responsive big headline like screenshot
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    color: #1f1b16;
+  }
+
+  &__description {
+    margin: 0;
+    max-width: 62ch; // keeps it from stretching too wide
+    margin-inline: auto;
+
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #6b625a;
+  }
+
+  &--left &__description {
+    margin-inline: 0;
+  }
+}
