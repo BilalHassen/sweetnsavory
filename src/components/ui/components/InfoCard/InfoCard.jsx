@@ -1,8 +1,8 @@
 import React from 'react'
-
-function InfoCard() {
+import "./InfoCard.scss"
+function InfoCard({children}) {
   return (
-    <div>InfoCard</div>
+    <div className='infoCard'>{children}</div>
   )
 }
 
