@@ -28,6 +28,7 @@ h4,
 h5,
 h6 {
   font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  color: $color-heading;
 }
 
 html,
@@ -196,8 +197,9 @@ button {
 
 
 p{
-  color: #7e6f67;
+  color: $color-text;
 }
+
 
 
 /* 
