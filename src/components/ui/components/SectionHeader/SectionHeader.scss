@@ -1,9 +1,10 @@
-@use "../../styles/partials/variables" as *;
-@use "../../styles/partials/mixins" as *;
+@use "../../../../styles/partials/variables" as *;
+@use "../../../../styles/partials/mixins" as *;
 
 .sectionHeader {
   // container spacing
-  padding: clamp(3rem, 6vw, 5.5rem) 1.5rem;
+  // fix later
+  padding: clamp(1.6rem, 6vw, 5.5rem) 1.5rem;
   background: #f6f2ec; // match your screenshot tone
   text-align: center;
 
@@ -21,8 +22,8 @@
     margin: 0 0 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.14em;
-    font-weight: 600;
-    font-size: 0.85rem;
+    font-weight: 300;
+    font-size: 1.4rem;
     color: #c46a1b; // warm orange accent
   }
 
@@ -32,7 +33,7 @@
     line-height: 1.05;
 
     // responsive big headline like screenshot
-    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-size: clamp(3.6rem, 5vw, 4rem);
     color: #1f1b16;
   }
 
@@ -41,8 +42,8 @@
     max-width: 62ch; // keeps it from stretching too wide
     margin-inline: auto;
 
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.8rem;
+    line-height: 1.75;
     color: #6b625a;
   }
 
