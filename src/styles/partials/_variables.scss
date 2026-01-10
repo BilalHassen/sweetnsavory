@@ -6,6 +6,7 @@ $color-caramel: hsl(32, 80%, 45%);
 $color-burgundy: hsl(350, 45%, 35%);
 $color-sage: hsl(140, 25%, 45%);
 $color-charcoal: hsl(20, 15%, 15%);
+$color-black: #000;
 
 // Extended palette
 $color-caramel-light: hsl(32, 79%, 50%);
@@ -13,6 +14,8 @@ $color-caramel-dark: hsl(32, 80%, 30%);
 $color-burgundy-light: hsl(350, 45%, 50%);
 $color-sage-light: hsl(140, 25%, 75%);
 $color-taupe: hsl(35, 12%, 65%);
+$color-text: #7e6f67;
+$color-heading: $color-black;
 
 // Neutral / UI colors
 $color-cream: hsl(40, 25%, 96%); // Background (Cream)
@@ -23,7 +26,6 @@ $color-border: hsl(30, 12%, 86%); // Borders/dividers
 // Helpful aliases (semantic names)
 $color-bg: $color-cream;
 $color-surface: $color-warm-white;
-$color-text: $color-charcoal;
 $color-accent: $color-caramel;
 
 // Optional: palette map for programmatic access
