@@ -4,6 +4,7 @@ const aboutImg = `${import.meta.env.BASE_URL}assets/images/about.png`;
 const aboutImgLrg = `${import.meta.env.BASE_URL}assets/images/about-larger.png`;
 import { aboutItems } from "./AboutData";
 import useWidth from "@hooks/useWidth";
+import CardStructure from "@/components/ui/components/CardStructure/CardStructure";
 function About() {
 
   console.log(aboutItems)
@@ -36,20 +37,14 @@ function About() {
       </div>
       <div className="about__container">
 
-        {aboutItems.map((item)=>{
-          const Icon = item.Icon
-          return <div className="about__item">
-          <span className="about__iconContainer">
-            <Icon className="about__icon"/>
-          </span>
-          <div className="about__text">
-            <h3 className="about__header">{item.title}</h3>
-            <p className="about__description">
-              {item.description}
-            </p>
-          </div>
-        </div>
-        })}
+        {aboutItems.map((item) => (
+          <CardStructure
+            key={item.id}
+            Icon={item.Icon}
+            title={item.title}
+            info={item.description}
+          />
+        ))}
         </div>
 
 

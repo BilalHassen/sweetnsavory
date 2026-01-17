@@ -23,9 +23,19 @@
     }
 }
 
+.btn--outline-orange-alt{
+    border: 2px solid $color-caramel-light;
+    color: $color-caramel-light;
+}
+
+.btn--outline-orange-alt:hover{
+    transform: scale(1.05);
+}
+
 .btn--white-outline{
     border: 1px solid white;
     color: white;
+    color: $color-caramel-light;
 }
 
 .btn--white-outline:hover{
