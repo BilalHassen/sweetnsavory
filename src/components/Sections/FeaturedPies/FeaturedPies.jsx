@@ -5,7 +5,6 @@ import Card from "./components/Card/Card";
 import { Car } from "lucide-react";
 function FeaturedPies() {
   const featuredPies = piesData.filter((pie) => pie.isFeatured);
-  console.log(featuredPies);
   return (
     <section className="featured">
       <div className="layout__wrapper">
@@ -36,4 +35,4 @@ function FeaturedPies() {
 
 export default FeaturedPies;
 
-//TODO GET THE FEATURED PIES RENDERED PROPERLY IN THE LAYOUT
+
