@@ -6,8 +6,6 @@ import { aboutItems } from "./AboutData";
 import useWidth from "@hooks/useWidth";
 import CardStructure from "@/components/ui/components/CardStructure/CardStructure";
 function About() {
-
-  console.log(aboutItems)
   const width = useWidth()  
   const imgSelect = width >= 768 ? aboutImgLrg : aboutImg
  

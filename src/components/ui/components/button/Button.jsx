@@ -7,9 +7,6 @@ function Button({
   identity,
   ...props
 }) {
-  console.log("props:", props.selectedValue);
-
-  console.log(props.selectedValue === identity);
 
   const classes = `btn btn--${
     props.selectedValue !== identity ? "inactive" : variant

@@ -25,6 +25,13 @@
     @include desktop-small {
       max-width: 1600px;
       padding: 8rem ;
+      gap: 8rem;
     }
+  }
+
+  &__wrapper--footer {
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
