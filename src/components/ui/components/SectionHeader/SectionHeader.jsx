@@ -1,4 +1,3 @@
-import React from "react";
 import "./SectionHeader.scss";
 
 function SectionHeader({
@@ -6,9 +5,11 @@ function SectionHeader({
   title,            // main heading (e.g., "Discover Our Pies")
   description,      // paragraph under title
   align = "center", // "center" | "left"
-  as: TitleTag = "h2", // heading tag: h1/h2/h3 etc.
+  as = "h2", // heading tag: h1/h2/h3 etc.
   className = "",
 }) {
+  const TitleTag = as;
+
   return (
     <header className={`sectionHeader sectionHeader--${align} ${className}`}>
       {eyebrow && <p className="sectionHeader__eyebrow">{eyebrow}</p>}
