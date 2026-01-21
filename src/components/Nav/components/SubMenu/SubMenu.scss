@@ -5,10 +5,16 @@
     &__largeMenu{
         display: flex;
         align-items: center;
-        gap: 2rem
+        gap: 2rem;
     }
     &__largeMenu-text{
         font-size: 2rem;
+        transition: color 0.3s ease;
+    }
+
+    // Apply hover color via the parent item so we can special-case the order button
+    &__largeMenu-item:hover &__largeMenu-text{
+        color: $color-caramel-light;
     }
 
     &__largeMenu-box{
@@ -54,5 +60,10 @@
 .orderBtn:hover{
     color: black;
     transform: scale(1.05);
+}
+
+// Keep the order button's text readable on hover (background is caramel)
+.orderBtn:hover .nav__largeMenu-text{
+    color: black;
 }
 }

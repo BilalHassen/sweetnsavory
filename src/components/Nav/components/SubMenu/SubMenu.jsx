@@ -5,12 +5,22 @@ function SubMenu({ data, variant }) {
   return (
     <div className="nav__largeMenu">
       {data.map((menuItem) => {
+        const classNames = `nav__largeMenu-item ${
+          variant && menuItem.class !== "phone" ? "orderBtn" : ""
+        } ${menuItem.class ? menuItem.class : ""}`;
+
+        if (menuItem.link) {
+          return (
+            <a key={menuItem.id} href={menuItem.link} className={classNames}>
+              <p className="nav__largeMenu-text">{menuItem.title}</p>
+            </a>
+          );
+        }
+
         return (
           <button
             key={menuItem.id}
-            className={`nav__largeMenu-item ${
-              variant && menuItem.class !== "phone" ? "orderBtn" : ""
-            } ${menuItem.class ? menuItem.class : ""}`}
+            className={classNames}
           >
             {variant && menuItem.class === "phone" ? (
               <div className={`nav__largeMenu-box`}>

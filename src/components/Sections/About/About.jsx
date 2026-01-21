@@ -1,4 +1,3 @@
-import React from "react";
 import "./About.scss";
 const aboutImg = `${import.meta.env.BASE_URL}assets/images/about.png`;
 const aboutImgLrg = `${import.meta.env.BASE_URL}assets/images/about-larger.png`;
@@ -6,12 +5,11 @@ import { aboutItems } from "./AboutData";
 import useWidth from "@hooks/useWidth";
 import CardStructure from "@/components/ui/components/CardStructure/CardStructure";
 function About() {
-  const width = useWidth()  
-  const imgSelect = width >= 768 ? aboutImgLrg : aboutImg
- 
+  const width = useWidth();
+  const imgSelect = width >= 768 ? aboutImgLrg : aboutImg;
 
   return (
-    <section className="about">
+    <section id="about" className="about">
       {/* <div className="about__media">
   <img className="about__img" src={imgSelect} alt="About Sweet & Savoury" />
 </div> */}
