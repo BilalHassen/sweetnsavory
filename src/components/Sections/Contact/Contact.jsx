@@ -5,10 +5,11 @@ import { contactData, storeHoursData } from "@/components/Sections/Contact/Conta
 import InfoCard from "@/components/ui/components/InfoCard/InfoCard";
 import CardStructure from "@/components/ui/components/CardStructure/CardStructure";
 import {  FaMapMarkerAlt, } from "react-icons/fa";
-import Button from "@components/ui/components/button/Button";
+// Use one consistent alias style for UI components
+import Button from "@/components/ui/components/button/Button";
 function Contact() {
   return (
-    <section className="contact">
+    <section id="contact" className="contact">
         <div className="contact__wrapper">
       <SectionHeader
         eyebrow={"Contact"}

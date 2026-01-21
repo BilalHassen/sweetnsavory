@@ -9,6 +9,10 @@
     border: none;
     transition: background 0.3s ease, opacity 0.3s ease, transform 1s ease;
     
+    &:focus-visible{
+        outline: 2px solid color.change($color-caramel-light, $alpha: 0.9);
+        outline-offset: 3px;
+    }
 }
 
 
@@ -35,7 +39,6 @@
 .btn--white-outline{
     border: 1px solid white;
     color: white;
-    color: $color-caramel-light;
 }
 
 .btn--white-outline:hover{
@@ -97,4 +100,5 @@
 
 .btn--inactive{
     color: $color-text;
+    opacity: 0.65;
 }

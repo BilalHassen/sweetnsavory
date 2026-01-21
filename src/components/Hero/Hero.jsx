@@ -2,16 +2,30 @@ import "./Hero.scss";
 import Button from "../ui/components/button/Button";
 
 function Hero() {
-  const heroBg = `${import.meta.env.BASE_URL}assets/images/hero.jpg`;
+  const heroWebp = `${import.meta.env.BASE_URL}assets/images/hero.webp`;
+  const heroAvif = `${import.meta.env.BASE_URL}assets/images/hero.avif`;
   const saFlagSrc = `${import.meta.env.BASE_URL}assets/images/SA-flag.png`;
 
   return (
     <main>
       <section
+        id="home"
         className="hero"
         aria-labelledby="hero-title"
-        style={{ backgroundImage: `url(${heroBg})` }}
       >
+        {/* Use <picture> so modern formats (AVIF/WebP) load for LCP */}
+        <picture className="hero__bg" aria-hidden="true">
+          <source srcSet={heroAvif} type="image/avif" />
+          <source srcSet={heroWebp} type="image/webp" />
+          <img
+            src={heroWebp}
+            alt=""
+            decoding="async"
+            fetchPriority="high"
+            width="1600"
+            height="900"
+          />
+        </picture>
         <div className="hero__overlay" aria-hidden="true" />
 <div className="layout__wrapper">
         <div className="hero__inner">

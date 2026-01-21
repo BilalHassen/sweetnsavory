@@ -1,12 +1,13 @@
 import React from "react";
 import "./FeaturedPies.scss";
-import { piesData } from "../../../data/data";
+// Use alias import so moving this file won't break paths
+import { piesData } from "@/data/data";
 import Card from "./components/Card/Card";
 import { Car } from "lucide-react";
 function FeaturedPies() {
   const featuredPies = piesData.filter((pie) => pie.isFeatured);
   return (
-    <section className="featured">
+    <section id="pies" className="featured">
       <div className="layout__wrapper">
         <div className="featured__text-wrapper">
         <h2 className="featured__title">Featured Items</h2>

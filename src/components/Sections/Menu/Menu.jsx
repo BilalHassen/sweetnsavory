@@ -22,7 +22,7 @@ function Menu() {
   const activeMenu = selectedValue === "savoury" ? savouryMenu : sweetMenu;
 
   return (
-    <section className="menu">
+    <section id="menu" className="menu">
       <SectionHeader
         eyebrow={"Our Menu"}
         title={"Discover Our Pies"}
@@ -53,19 +53,21 @@ function Menu() {
       </div>
       </div>
       <div className="menu__container">
+      <ul className="menu__itemsContainer">
       {activeMenu.map((item) => {
-        return(
-        <ul className="menu__itemsContainer">
-          <InfoCard className="menu__card">
-            <div className="menu__txtContainer">
+        return (
+          <li key={item.name} className="menu__item">
+            <InfoCard className="menu__card">
+              <div className="menu__txtContainer">
                 <h3 className="menu__itemName">{item.name}</h3>
                 <p className="menu__price">${item.price}</p>
-            </div>
-            <p className="menu__ingredients">{item.ingredients}</p>
-          </InfoCard>
-        </ul>
-        )
+              </div>
+              <p className="menu__ingredients">{item.ingredients}</p>
+            </InfoCard>
+          </li>
+        );
       })}
+       </ul>
       </div>
     </section>
   );
