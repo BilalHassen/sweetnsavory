@@ -1,7 +1,8 @@
 import "./Footer.scss";
 import SectionHeader from "@/components/ui/components/SectionHeader/SectionHeader";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
-import { menuData } from "../../../components/Nav/navMenuData";
+// Use alias import so moving this file won't break paths
+import { menuData } from "@/components/Nav/navMenuData";
 import useWidth from "@hooks/useWidth";
 function Footer() {
   const width = useWidth();
@@ -65,14 +66,17 @@ function Footer() {
           </ul>
         </nav>
 
-        <ul className="footer__list">
+        <div className="footer__list">
+          
           <p className="footer__title">Contact</p>
+          <ul className="footer__list">
           <li className="footer__link">140 Adeilaide St East</li>
 
           <li className="footer__link">Toronto, ON</li>
           <li className="footer__link">(647) 687-7841</li>
           <li className="footer__link">sweet&savoury@gmail.com</li>
-        </ul>
+          </ul>
+        </div>
 
         {width < 1366 && (
           <>

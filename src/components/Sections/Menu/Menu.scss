@@ -23,7 +23,9 @@
         }
     }
 
-    &__container{
+
+    &__itemsContainer{
+      
         display: grid;
         // Mobile: 1 column list
         grid-template-columns: 1fr;
@@ -35,7 +37,6 @@
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 2.4rem;
         }
-        
     }
 
     &__txtContainer{
