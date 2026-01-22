@@ -1,19 +1,32 @@
 import "./About.scss";
-const aboutImg = `${import.meta.env.BASE_URL}assets/images/about.png`;
-const aboutImgLrg = `${import.meta.env.BASE_URL}assets/images/about-larger.png`;
 import { aboutItems } from "./AboutData";
-import useWidth from "@hooks/useWidth";
 import CardStructure from "@/components/ui/components/CardStructure/CardStructure";
-function About() {
-  const width = useWidth();
-  const imgSelect = width >= 768 ? aboutImgLrg : aboutImg;
 
+// Fallback PNG must be a file that actually exists in /public/assets/images/
+// (about.png was removed during asset cleanup)
+const aboutImgFallbackPng = `${import.meta.env.BASE_URL}assets/images/about-larger.png`;
+const aboutImgMobileAvif = `${import.meta.env.BASE_URL}assets/images/about-mobile.avif`;
+const aboutImgLargeAvif = `${import.meta.env.BASE_URL}assets/images/about-lrg.avif`;
+function About() {
   return (
     <section id="about" className="about">
-      {/* <div className="about__media">
-  <img className="about__img" src={imgSelect} alt="About Sweet & Savoury" />
-</div> */}
-<img className="about__img" src={imgSelect} alt="About Sweet & Savoury" />
+      <picture className="about__media">
+        <source
+          type="image/avif"
+          media="(min-width: 768px)"
+          srcSet={aboutImgLargeAvif}
+        />
+        <source type="image/avif" srcSet={aboutImgMobileAvif} />
+        <img
+          className="about__img"
+          src={aboutImgFallbackPng}
+          alt="About Sweet & Savoury"
+          loading="lazy"
+          decoding="async"
+          width="600"
+          height="800"
+        />
+      </picture>
 
       <div className="about__flexContainer">
       <div className="about__textContainer">
@@ -44,21 +57,7 @@ function About() {
         </div>
 
 
-  {/* <div className="about__item">
-    <span className="about__icon">
-      <FaHeart />
-    </span>
-    <div className="about__text">
-      <h3>Made with Love</h3>
-      <p>
-        Every pie is handcrafted with care, using time-honoured techniques and
-        family recipes.
-      </p>
-    </div>
-  </div> */}
-
-  
-</div>
+      </div>
 
     </section>
   );
