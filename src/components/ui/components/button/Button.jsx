@@ -7,6 +7,8 @@ function Button({
   identity,
   selectedValue,
   type = "button",
+  as,
+  href,
   ...props
 }) {
   // Backward-compatible "toggle button" behavior (used in Menu):
@@ -18,6 +20,18 @@ function Button({
       : variant;
 
   const classes = `btn btn--${resolvedVariant} btn--${size} ${className}`.trim();
+
+  // If `href` is provided (or `as="a"`), render an anchor styled as a button.
+  // This lets callers use the same Button component for external links (ex: Maps).
+  const Component = as ?? (href ? "a" : "button");
+  if (Component === "a") {
+    return (
+      <a className={classes} href={href} {...props}>
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button type={type} className={classes} {...props}>
       {children}
