@@ -30,8 +30,8 @@
   }
 
   &__inner {
-    display: flex;
-    flex-direction: column;
+    // This element also has .layout__wrapper--footer on it.
+    // Let .layout__wrapper--footer control flex-direction at breakpoints.
     gap: 1.6rem;
   }
 
@@ -97,6 +97,19 @@
   }
 
   &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    @include desktop-small{
+      width: 200px;
+    }
+  }
+
+  &__title{
+    display: block;
+  }
+
+  &__contact{
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
