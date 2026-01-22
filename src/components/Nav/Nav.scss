@@ -77,10 +77,16 @@
     transition: transform 180ms ease;
   }
 
-  &__button:focus,
-  &__button:focus-visible {
+  // Remove default outline but add custom focus indicator for keyboard users
+  &__button:focus {
     outline: none;
-    box-shadow: none;
+  }
+
+  // focus-visible: only shows for keyboard navigation, not mouse clicks
+  &__button:focus-visible {
+    outline: 2px solid $color-caramel;
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 
   &__button.is-open {

@@ -35,6 +35,7 @@ function Contact() {
     
           <div className="contact__hoursCard">
             <div className="contact__hoursHeader">
+              {/* aria-hidden: decorative icon, the heading next to it already describes the content */}
               <span className="contact__hoursIcon" aria-hidden="true">
                 <storeHoursData.Icon />
               </span>
@@ -55,6 +56,7 @@ function Contact() {
 
       <div className="contact__card contact__card--map">
         <div className="contact__mapCard">
+          {/* aria-hidden: decorative icon, screen readers skip it */}
           <span className="contact__mapIcon" aria-hidden="true">
             <FaMapMarkerAlt />
           </span>
