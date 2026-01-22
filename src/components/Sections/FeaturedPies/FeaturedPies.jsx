@@ -1,21 +1,21 @@
-import React from "react";
 import "./FeaturedPies.scss";
 // Use alias import so moving this file won't break paths
 import { piesData } from "@/data/data";
 import Card from "./components/Card/Card";
-import { Car } from "lucide-react";
+import SectionHeader from "@/components/ui/components/SectionHeader/SectionHeader";
 function FeaturedPies() {
   const featuredPies = piesData.filter((pie) => pie.isFeatured);
   return (
     <section id="pies" className="featured">
+        <SectionHeader
+          className="featured__header"
+          title="Featured Items"
+          description="From sweet to savory, each pie is crafted with premium ingredients and baked to golden perfection in our stone ovens."
+          align="center"
+          as="h2"
+        />
       <div className="layout__wrapper">
-        <div className="featured__text-wrapper">
-        <h2 className="featured__title">Featured Items</h2>
-        <p className="featured__statment">
-          From sweet to savory, each pie is crafted with premium ingredients and
-          baked to golden perfection in our stone ovens.
-        </p>
-        </div>
+      
         <ul className="featured__piesList">
           {featuredPies.map((pie, index) => (
             <li className="featured__pies" key={index}>
