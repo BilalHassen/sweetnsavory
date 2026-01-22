@@ -1,0 +1,32 @@
+# -----------------------------------------------------------------------------
+# robots.txt
+#
+# Purpose:
+# This file tells search engine crawlers (such as Googlebot, Bingbot, etc.)
+# which parts of this website they are allowed or not allowed to access.
+#
+# How it works:
+# - Crawlers request this file first when visiting the site: /robots.txt
+# - The rules inside apply to automated bots only (not human users).
+# - It helps control crawl behavior, reduce unnecessary server load,
+#   and prevent indexing of private or low-value pages.
+#
+# Important notes:
+# - robots.txt does NOT secure private data — it only provides instructions.
+# - Disallowed pages can still appear in search results if linked elsewhere.
+# - For preventing indexing, use "noindex" meta tags or proper authentication.
+#
+# Typical uses:
+# - Allowing full access to public pages
+# - Blocking admin panels, staging routes, or internal tools
+# - Pointing crawlers to the sitemap location
+# -----------------------------------------------------------------------------
+
+# Apply to all search engine bots
+User-agent: *
+
+# Allow bots to crawl everything on the page
+Allow: /
+
+# Point crawlers to sitemap for faster discovery
+Sitemap: https://sweetnsavoury.netlify.app/sitemap.xml
