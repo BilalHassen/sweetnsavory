@@ -1,16 +1,190 @@
 <!doctype html>
+<!--
+  Declares this document as HTML5.
+  This helps browsers render the page using modern standards.
+-->
 <html lang="en">
+  <!--
+    The <html> element wraps the entire document.
+    lang="en" tells browsers and screen readers the main language is English
+    (important for accessibility and SEO).
+  -->
   <head>
+    <!--
+      Sets the character encoding to UTF-8.
+      This ensures special characters (€, accents, emojis, etc.) display correctly.
+    -->
     <meta charset="UTF-8" />
+
+    <!--
+      Meta description:
+      - A short summary of your website.
+      - Often shown in Google search results under the title.
+      - Helps search engines understand your page content.
+      - Should be clear, human-readable, and ~140–160 characters.
+    -->
+    <meta
+      name="description"
+      content="Sweet & Savory makes handcrafted South African pies—sweet classics and savory favorites baked fresh with traditional recipes."
+    />
+
+    <!--
+      Robots directive:
+      - "index" allows search engines to include this page in search results.
+      - "follow" allows them to follow links on this page.
+      - Prevents accidentally blocking your site from Google.
+    -->
+    <meta name="robots" content="index,follow" />
+
+    <!--
+      Open Graph (OG) tags:
+      These control how your site appears when shared on:
+      Facebook, LinkedIn, WhatsApp, iMessage, Discord, etc.
+    -->
+
+    <!-- Declares this page as a website (not an article, video, etc.) -->
+    <meta property="og:type" content="website" />
+
+    <!-- The exact URL that should appear in previews (must be absolute) -->
+    <meta property="og:url" content="https://sweetnsavoury.netlify.app/" />
+
+    <!-- The large bold title shown in social previews -->
+    <meta property="og:title" content="Sweet & Savory — South African Pies" />
+
+    <!-- The short description shown under the title in previews -->
+    <meta
+      property="og:description"
+      content="Handcrafted South African pies—sweet classics and savory favorites baked fresh."
+    />
+
+    <!--
+      The image shown in social previews.
+      Should be:
+      - Absolute URL
+      - ~1200x630px
+      - Under 1MB for best performance
+      
+      TODO: Create an og.jpg image (1200x630px) and upload to your domain.
+    -->
+    <meta property="og:image" content="https://sweetnsavoury.netlify.app/assets/images/hero.webp" />
+
+    <!--
+      Twitter (X) card tags:
+      Same purpose as Open Graph, but specifically for Twitter.
+    -->
+
+    <!-- Uses a large preview image instead of a small thumbnail -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Title used in Twitter previews -->
+    <meta name="twitter:title" content="Sweet & Savory — South African Pies" />
+
+    <!-- Description used in Twitter previews -->
+    <meta
+      name="twitter:description"
+      content="Handcrafted South African pies—sweet classics and savory favorites baked fresh."
+    />
+
+    <!-- Image used in Twitter previews -->
+    <meta name="twitter:image" content="https://sweetnsavoury.netlify.app/assets/images/hero.webp" />
+
+    <!--
+      Canonical URL (currently commented out):
+
+      Tells search engines:
+      "This is the official version of this page."
+
+      Important for SPAs because:
+      - Prevents duplicate content issues
+      - Consolidates SEO ranking to one URL
+
+      Uncomment and replace with your real domain when deployed.
+    -->
+    <link rel="canonical" href="https://sweetnsavoury.netlify.app/" />
+
+    <!--
+      Dummy favicon to prevent unnecessary 404 requests in some browsers.
+      Mostly optional.
+    -->
     <link rel="icon" href="data:," />
-    <link rel="icon" type="image/png" href="/assets/images/logo.png"/>
-    <!-- Preload the hero image to improve LCP on mobile -->
-    <link rel="preload" as="image" href="%BASE_URL%assets/images/hero.avif" type="image/avif" />
+
+    <!--
+      Actual favicon for your website (shown in browser tabs).
+      Uses your logo image.
+    -->
+    <link rel="icon" type="image/png" href="/assets/images/logo.png" />
+
+    <!--
+      Preloading the hero image:
+
+      This tells the browser:
+      "Start downloading this image immediately."
+
+      Why:
+      - The hero image is usually the Largest Contentful Paint (LCP) element.
+      - Preloading improves Lighthouse performance score.
+      - Reduces perceived load time on mobile.
+
+      AVIF is tried first (best compression).
+    -->
+    <link
+      rel="preload"
+      as="image"
+      href="%BASE_URL%assets/images/hero.avif"
+      type="image/avif"
+      fetchpriority="high"
+    />
+
+    <!--
+      WebP fallback for browsers that don’t support AVIF.
+    -->
+    <link
+      rel="preload"
+      as="image"
+      href="%BASE_URL%assets/images/hero.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+
+    <!--
+      Controls page scaling on mobile devices.
+
+      width=device-width  → matches screen width
+      initial-scale=1.0    → normal zoom level
+
+      Critical for responsive design and Lighthouse.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      Title of the page:
+
+      - Shown in browser tab
+      - Used by Google as the main clickable search result title
+      - Should be short and brand-focused
+    -->
     <title>Sweet & Savory</title>
   </head>
+
   <body>
+    <!--
+      Root div:
+
+      This is where your React app mounts.
+      React replaces this div with your entire SPA UI.
+    -->
     <div id="root"></div>
+
+    <!--
+      Loads your React application entry point.
+
+      type="module":
+      - Enables ES modules
+      - Required by Vite
+      - Allows modern imports
+
+      /src/main.jsx bootstraps React and renders App().
+    -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

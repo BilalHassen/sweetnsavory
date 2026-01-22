@@ -3,11 +3,21 @@
 .featured{
     background-color: $color-cream;
     width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+
+    margin-bottom: 4rem;
 
     @include tablet-small{
-        min-width: 100%;
+        margin-bottom: 8rem;
+    }
+
+    @include desktop-small{
+        margin-bottom: 12rem;
+    }
+    // Don't cap the whole section width — `layout__wrapper` already handles max-width.
+
+    // Only change the Featured header title color (keeps other SectionHeaders unchanged)
+    &__header .sectionHeader__title{
+        color: $color-caramel-light;
     }
 
     &__piesList{
@@ -37,35 +47,4 @@
   }
     }
 
-    &__title{
-        color: $color-caramel-dark;
-        font-size: 3rem;
-
-        @include tablet-small{
-            font-size: 5rem;
-        }
-    }
-
-    &__statment{
-        color: #7e6f67;
-        font-size: 1.4rem;
-        line-height: 2rem;
-
-        @include tablet-small{
-            font-size: 2rem;
-            font-weight: 340;
-        }
-    }
-
-    &__text-wrapper{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-
-        @include tablet-small{
-            max-width: 600px;
-            margin: 0 auto;
-        }
-    }
 }

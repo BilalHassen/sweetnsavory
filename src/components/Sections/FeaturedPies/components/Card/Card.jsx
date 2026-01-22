@@ -7,9 +7,13 @@ function Card({ name, description, img, category, price }) {
 
   return (
     <article className="card">
+      {/* role="img": tells screen readers this div is an image (needed for CSS background-images) */}
+      {/* aria-label: the alt text screen readers announce since there's no actual <img> */}
       <div
         className="card__imgContainer"
         style={{ "--card-img": `url(${img})` }}
+        role="img"
+        aria-label={`Photo of ${name}`}
       >
         <Button variant={btnVariant} size={"small"}>
           <span className="card__btn-text">{category}</span>
@@ -17,7 +21,7 @@ function Card({ name, description, img, category, price }) {
       </div>
       <div className="card__textContainer">
         <div className="card__flexContainer">
-        <h3 className="card__title">{name}</h3>
+          <h3 className="card__title">{name}</h3>
           <p className="card__price">{`$${price}`}</p>
         </div>
         <p className="card__description">{description}</p>
