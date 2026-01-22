@@ -1,4 +1,4 @@
-# Sweet & Savoury — Online Bakery Website
+# Sweet & Savoury, Online Bakery Website
 
 A production-ready single-page website for a family-run South African bakery, built with React and Vite. The site focuses on performance, accessibility, SEO, and clean front-end architecture.
 
