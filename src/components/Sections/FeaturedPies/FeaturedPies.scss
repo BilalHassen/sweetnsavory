@@ -1,0 +1,50 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+.featured{
+    background-color: $color-cream;
+    width: 100%;
+
+    margin-bottom: 4rem;
+
+    @include tablet-small{
+        margin-bottom: 8rem;
+    }
+
+    @include desktop-small{
+        margin-bottom: 12rem;
+    }
+    // Don't cap the whole section width — `layout__wrapper` already handles max-width.
+
+    // Only change the Featured header title color (keeps other SectionHeaders unchanged)
+    &__header .sectionHeader__title{
+        color: $color-caramel-light;
+    }
+
+    &__piesList{
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        align-items: stretch; /*all the items stretch 
+        to match the height of the tallest card*/
+
+        @include tablet-small{
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2rem;
+                  
+        }
+        
+    }
+
+    &__pies{
+        @include tablet-small {
+            flex: 0 0 calc(50% - 1rem);
+          }
+
+
+  @include desktop-small {
+    flex: 0 0 calc(25% - 1.5rem); // 4 per row
+  }
+    }
+
+}

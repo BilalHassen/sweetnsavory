@@ -1,12 +1,28 @@
 @use "../../styles/partials/variables" as *;
-
+@use "../../styles/partials/mixins" as *;
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+
+  @include tablet-small{
+    margin: 0 auto;
+    max-width: 860px;
+    padding-left: 3.4rem;
+    padding-right: 3.4rem;
+  }
+
+  @include desktop-small{
+    max-width: 1600px;
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
+
+  
 
   &__brand {
     display: flex;
@@ -17,6 +33,12 @@
     height: 100px;
     width: auto;
     display: block;
+
+    @include tablet-small{
+      height: 150px;
+      
+    }
+
   }
 
   &__dropdown {
@@ -55,10 +77,16 @@
     transition: transform 180ms ease;
   }
 
-  &__button:focus,
-  &__button:focus-visible {
+  // Remove default outline but add custom focus indicator for keyboard users
+  &__button:focus {
     outline: none;
-    box-shadow: none;
+  }
+
+  // focus-visible: only shows for keyboard navigation, not mouse clicks
+  &__button:focus-visible {
+    outline: 2px solid $color-caramel;
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 
   &__button.is-open {

@@ -1,0 +1,146 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+
+.contact{
+
+    display: flex;
+    flex-direction: column;
+    gap:4rem;
+    margin-bottom: 4rem;
+
+    @include tablet-small{
+        margin-bottom: 8rem;
+    }
+
+    @include tablet-small{
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    // allows the children items to stretch vertically
+    // on the cross axis
+    // stretchs item opposite of the direction
+    // of the flex direction
+
+     // WHY this matters here:
+    // - this stretches the TWO DIRECT CHILDREN of .contact:
+    //   .contact__wrapper and .contact__lrgWrapper
+    // - since flex-direction is row at this breakpoint,
+    //   the cross axis is vertical (height)
+    // - result: both columns become the same height (match the tallest)
+
+    &__wrapper{
+        @include tablet-small {
+            display: flex;
+            flex-direction: column;
+            width: 55%;
+          }
+    }
+
+
+    // contact list styling
+    &__list{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__hours{
+        background-color: $color-burgundy;
+        border-radius: 12px;
+        padding: 3.2rem;
+        @include tablet-small{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &__hoursCard{
+        display: flex;
+        flex-direction: column;
+        gap: 2.6rem;
+    }
+
+    &__hoursHeader{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__hoursList{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__hoursRow{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__hoursIcon{
+        color: white;
+        font-size: 2.4rem;
+        display: flex;
+    }
+
+    &__hoursTitle{
+        color: white;
+        font-size: 2.4rem;
+    }
+
+    &__hoursDay, &__hoursTime{
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 350;
+    }
+
+    &__card{
+        background-color: #e4d7cc;
+        border-radius: 12px;
+        padding: 3.2rem
+    }
+
+    &__mapIcon{
+        color: $color-caramel-light;
+        font-size: 5rem;
+    }
+
+    &__mapCard{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    // wrapper for hours and find us for larger sizes
+    &__lrgWrapper{
+
+    // WHY this matters:
+    // - this is the RIGHT COLUMN container
+    // - it stacks the two cards vertically (hours + map)
+    // - because the parent (.contact) is stretching columns,
+    //   this right column now has a "tall" height to work with
+        flex: 1;
+        display: flex;
+        gap: 4rem;
+        flex-direction: column;
+        
+       
+    }
+}
+
+
+.contact__hours,
+.contact__card--map {
+  @include tablet-small {
+     // WHY this is the key:
+    // - these are DIRECT CHILDREN of .contact__lrgWrapper
+    // - .contact__lrgWrapper is a flex COLUMN, so the main axis is vertical (height)
+    // - flex: 1 makes them SHARE the available height equally
+    //   (two cards -> each gets ~50% of the right column height)
+    flex: 1;
+ 
+  }
+}

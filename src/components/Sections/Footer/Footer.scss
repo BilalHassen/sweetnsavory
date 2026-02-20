@@ -1,0 +1,160 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+
+.footer {
+  background-color: $color-charcoal;
+  width: 100%;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include desktop-small{
+    padding: 10rem 0 ;
+  }
+
+
+
+  // container for the layout but suited to the footer styling
+  .layout__wrapper--footer {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  
+
+    @include desktop-small{
+      flex-direction: row;
+      align-items: flex-start;
+      
+    }
+  }
+
+  &__inner {
+    // This element also has .layout__wrapper--footer on it.
+    // Let .layout__wrapper--footer control flex-direction at breakpoints.
+    gap: 1.6rem;
+  }
+
+  &__description {
+    color: $color-muted;
+    max-width: 60ch;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  &__socialLink {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #3a342f;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+
+    svg {
+      color: white;
+      fill: white;
+      height: 2rem;
+      width: 2rem;
+    }
+
+    &:hover {
+      transform: scale(1.06);
+      background-color: $color-caramel-light;
+    }
+  }
+
+  &__title {
+    color: white;
+    font-size: 1.8rem;
+  }
+
+  &__link {
+    color: #fcfbf8b3;
+    font-weight: 300;
+  }
+
+  &__container1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    // determine the width of the box
+    @include desktop-small{
+      flex: 1 1 520px;  // grows, shrinks, prefers ~520px
+      /*
+      1 the column is allowed to take up extra space 
+      2. the column can shrink if needed
+      3. 520px this is the ideal starting width
+      */
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    @include desktop-small{
+      width: 200px;
+    }
+  }
+
+  &__title{
+    display: block;
+  }
+
+  &__contact{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    @include desktop-small{
+      width: 200px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include desktop-small{
+      width: 200px;
+    }
+
+  }
+
+  &__divider {
+    border: 0;            // IMPORTANT: remove default hr border
+    height: 1px;          // use 1px (0.5px is inconsistent)
+    width: 100%;
+    background-color: rgb(116, 116, 116); // debug color
+    opacity: 1;
+  }
+
+  &__dividerContainer{
+    @include desktop-small {  
+      width: 88.3vw;     // starting width
+    max-width: 1440px; // ceiling
+    margin: 0 auto;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    }
+  }
+  // styling for section header to be reused properly in the footer
+  .sectionHeader {
+    background: transparent;
+    padding: 0;
+  }
+
+  .sectionHeader__title {
+    color: $color-caramel-light;
+  }
+}

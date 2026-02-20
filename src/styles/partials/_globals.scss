@@ -10,10 +10,17 @@ body {
   overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
 
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 140px;
+}
+
 body {
   font-family: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color: $color-text;
   background: $color-bg;
+  font-size: 1.6rem;
 }
 
 h1,
@@ -23,6 +30,7 @@ h4,
 h5,
 h6 {
   font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  color: $color-heading;
 }
 
 html,
@@ -155,7 +163,6 @@ span {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 62.5%;
 }
 
 ul {
@@ -191,6 +198,9 @@ button {
 }
 
 
+p{
+  color: $color-text;
+}
 
 
 
