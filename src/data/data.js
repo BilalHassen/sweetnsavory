@@ -9,6 +9,7 @@ export const piesData = [
     img: `${import.meta.env.BASE_URL}assets/images/productImages/steak-pie2.jpg`,
     category: "savoury",
     isFeatured: true,
+    variantId: "50715681521911",
   },
   {
     name: "Chicken Pie",
@@ -20,6 +21,7 @@ export const piesData = [
     img: `${import.meta.env.BASE_URL}assets/images/productImages/chicken-pie.jpg`,
     category: "savoury",
     isFeatured: true,
+    variantId: "50715697512695",
   },
   {
     name: "Mince Beef Pie",
@@ -31,6 +33,7 @@ export const piesData = [
     img: `${import.meta.env.BASE_URL}assets/images/productImages/ground-beef.jpg`,
     category: "savoury",
     isFeatured: false,
+    variantId: "50715703410935",
   },
   {
     name: "Spinach & Cheese Pie",
@@ -42,6 +45,7 @@ export const piesData = [
     img: `${import.meta.env.BASE_URL}assets/images/productImages/spinach-pie.jpg`,
     category: "savoury",
     isFeatured: false,
+    variantId: "50715703804151",
   },
   {
     name: "Lamington",
@@ -53,6 +57,7 @@ export const piesData = [
     img: `${import.meta.env.BASE_URL}assets/images/productImages/lemington-cake-3.jpeg`,
     category: "sweet",
     isFeatured: true,
+    variantId: "50715705016567",
   },
   {
     name: "Double Chocolate Soft-Bake Cookie",
@@ -64,6 +69,7 @@ export const piesData = [
     img: `${import.meta.env.BASE_URL}assets/images/productImages/chocolate-cookie-3.jpeg`,
     category: "sweet",
     isFeatured: false,
+    variantId: "50715706654967",
   },
   {
     name: "Jam Crumble Tart",
@@ -75,6 +81,7 @@ export const piesData = [
     img: `${import.meta.env.BASE_URL}assets/images/productImages/jam-tart-3.jpeg`,
     category: "sweet",
     isFeatured: true,
+    variantId: "50715706196215",
   },
 ];
 

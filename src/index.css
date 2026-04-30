@@ -9,10 +9,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+}
+
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+@media (min-width: 768px) {
+  section[id] {
+    scroll-margin-top: 150px;
+  }
 }
 
 h1 {
@@ -20,4 +34,38 @@ h1 {
   font-size: 40px;
   line-height: 1.1;
   letter-spacing: -0.02em;
+}
+
+/* ── Shopify cart drawer size ───────────────────────────────────────────── */
+/* Mobile: full width, full height */
+.shopify-buy-cart-wrapper {
+  max-height: 100vh !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+}
+
+.shopify-buy-cart-wrapper iframe[name="frame-cart"] {
+  max-height: 100vh !important;
+  height: 100vh !important;
+}
+
+/* Tablet: still full height, narrower handled by Shopify options */
+@media (min-width: 600px) {
+  .shopify-buy-cart-wrapper {
+    max-height: 100vh !important;
+    height: 100vh !important;
+  }
+}
+
+/* Desktop: constrain height so it doesn't take the full screen */
+@media (min-width: 1024px) {
+  .shopify-buy-cart-wrapper {
+    max-height: 75vh !important;
+    height: 75vh !important;
+  }
+
+  .shopify-buy-cart-wrapper iframe[name="frame-cart"] {
+    max-height: 75vh !important;
+    height: 75vh !important;
+  }
 }

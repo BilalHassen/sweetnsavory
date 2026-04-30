@@ -1,8 +1,7 @@
 import React from "react";
 import Button from "@/components/ui/components/button/Button";
 import "./Card.scss";
-function Card({ name, description, img, category, price }) {
-  // const cardBgImg = `${import.meta.env.BASE_URL}assets/images/img`;
+function Card({ name, description, img, category, price, onAddToCart }) {
   const btnVariant = category === "sweet" ? "primary" : "alternate";
 
   return (
@@ -25,6 +24,11 @@ function Card({ name, description, img, category, price }) {
           <p className="card__price">{`$${price}`}</p>
         </div>
         <p className="card__description">{description}</p>
+        {onAddToCart && (
+          <button className="card__addToCart" onClick={onAddToCart}>
+            Add to cart
+          </button>
+        )}
       </div>
     </article>
   );

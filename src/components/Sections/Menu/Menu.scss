@@ -1,83 +1,59 @@
-@use "../../../styles/partials/variables" as *; 
-@use "../../../styles/partials/mixins" as *; 
-.menu{
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  &__btnContainer {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    gap: 2rem;
+  }
+
+  &__btnText {
+    color: inherit;
+    @include desktop-small {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__flexCon {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  // Same grid pattern as FeaturedPies
+  &__grid {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
+    align-items: stretch;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
+    @include tablet-small {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+  }
 
-    &__btnContainer{
-        display: flex;
-        // make it fit the max widht of 400
-        width: 100%;
-        // allwed to reach 400px with max-width
-        max-width: 400px;
-        gap: 2rem;
+  &__gridItem {
+    @include tablet-small {
+      flex: 0 0 calc(50% - 1rem);
     }
 
-
-    &__btnText{
-        color: inherit;
-        @include desktop-small{
-            font-size: 1.8rem;
-        }
+    @include desktop-small {
+      flex: 0 0 calc(33.333% - 1.4rem);
     }
-
-
-    &__itemsContainer{
-      
-        display: grid;
-        // Mobile: 1 column list
-        grid-template-columns: 1fr;
-        align-items: stretch;
-        gap: 2rem;
-
-        @include tablet-small{
-            // Tablet+: 2 items side-by-side
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 2.4rem;
-        }
-    }
-
-    &__txtContainer{
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        
-    }
-
-    &__itemName{
-        font-size: 1.8rem;
-
-        @include desktop-small{
-            font-size: 2rem;
-        }
-    }
-
-    &__price{
-        color: $color-caramel-light;
-        font-size: 1.8rem;
-        @include desktop-small{
-            font-size: 2rem;
-        }
-    }
-
-    &__ingredients{
-        font-size: 1.4rem;
-        @include desktop-small{
-            font-size: 1.6rem;
-        }
-    }
-
-    &__flexCon{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
+  }
 }
 
-.btn--inactive{
+.btn--inactive {
   color: $color-text;
 }
-

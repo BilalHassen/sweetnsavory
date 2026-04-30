@@ -20,11 +20,6 @@ export const menuData = [
     title: "Menu",
   },
   {
-    id: 555,
-    link: "#contact",
-    title: "Contact",
-  },
-  {
     id: 666,
     class: "phone",
     title: "(647) 687-7841",

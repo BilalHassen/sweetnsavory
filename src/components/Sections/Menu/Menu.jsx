@@ -1,24 +1,17 @@
 import React, { useState } from "react";
-import InfoCard from "@/components/ui/components/InfoCard/InfoCard";
+import Card from "@/components/Sections/FeaturedPies/components/Card/Card";
 import SectionHeader from "@/components/ui/components/SectionHeader/SectionHeader";
 import Button from "@/components/ui/components/button/Button";
 import "./Menu.scss";
 import { piesData } from "@/data/data";
+import { useShopifyCart, addToShopifyCart } from "@/hooks/useShopifyCart";
 
 function Menu() {
+  useShopifyCart()
   const [selectedValue, setSelectedValue] = useState("savoury");
 
-  function handleSelection(value) {
-    if (value === "savoury") {
-      setSelectedValue("savoury");
-    } else if (value === "sweet") {
-      setSelectedValue("sweet");
-    }
-  }
-
-  const savouryMenu = piesData.filter((pies) => pies.category === "savoury");
-  const sweetMenu = piesData.filter((pies) => pies.category === "sweet");
-
+  const savouryMenu = piesData.filter((pie) => pie.category === "savoury");
+  const sweetMenu = piesData.filter((pie) => pie.category === "sweet");
   const activeMenu = selectedValue === "savoury" ? savouryMenu : sweetMenu;
 
   return (
@@ -31,44 +24,41 @@ function Menu() {
         }
       />
       <div className="menu__flexCon">
-      <div className="menu__btnContainer">
-        <Button
-          variant={"primary"}
-          size={"med"}
-          identity={"savoury"}
-          selectedValue={selectedValue}
-          onClick={() => handleSelection("savoury")}
-        >
-          <span className="menu__btnText">Savoury</span>
-        </Button>
-        <Button
-          variant={"green"}
-          size={"med"}
-          identity={"sweet"}
-          selectedValue={selectedValue}
-          onClick={() => handleSelection("sweet")}
-        >
-          <span className="menu__btnText">Sweets</span>
-        </Button>
+        <div className="menu__btnContainer">
+          <Button
+            variant={"primary"}
+            size={"med"}
+            identity={"savoury"}
+            selectedValue={selectedValue}
+            onClick={() => setSelectedValue("savoury")}
+          >
+            <span className="menu__btnText">Savoury</span>
+          </Button>
+          <Button
+            variant={"green"}
+            size={"med"}
+            identity={"sweet"}
+            selectedValue={selectedValue}
+            onClick={() => setSelectedValue("sweet")}
+          >
+            <span className="menu__btnText">Sweets</span>
+          </Button>
+        </div>
       </div>
-      </div>
-      <div className="menu__container">
-      <ul className="menu__itemsContainer">
-      {activeMenu.map((item) => {
-        return (
-          <li key={item.name} className="menu__item">
-            <InfoCard className="menu__card">
-              <div className="menu__txtContainer">
-                <h3 className="menu__itemName">{item.name}</h3>
-                <p className="menu__price">${item.price}</p>
-              </div>
-              <p className="menu__ingredients">{item.ingredients}</p>
-            </InfoCard>
+      <ul className="menu__grid">
+        {activeMenu.map((item) => (
+          <li key={item.name} className="menu__gridItem">
+            <Card
+              name={item.name}
+              description={item.description}
+              img={item.img}
+              category={item.category}
+              price={item.price}
+              onAddToCart={() => addToShopifyCart(item.variantId)}
+            />
           </li>
-        );
-      })}
-       </ul>
-      </div>
+        ))}
+      </ul>
     </section>
   );
 }
