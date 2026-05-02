@@ -14,47 +14,46 @@ function Nav() {
 
   return (
     <nav className="nav">
-      {/* aria-label: describes where this link goes (useful when link text is just a logo) */}
-      <a className="nav__brand" href="/" aria-label="Sweet & Savory Home">
-        <img className="nav__logo" src={logoSrc} alt="Sweet & Savory logo" />
-      </a>
+      <div className="nav__inner">
+        <a className="nav__brand" href="/" aria-label="Sweet & Savory Home">
+          <img className="nav__logo" src={logoSrc} alt="Sweet & Savory logo" />
+        </a>
 
-      {width <= 767 && (
-        <Menu as="div" className="nav__dropdown">
-          {({ open }) => (
-            <>
-              {/* aria-label: gives icon-only buttons a name for screen readers */}
-              <Menu.Button
-                className={`nav__button ${open ? "is-open" : ""}`}
-                aria-label={open ? "Close menu" : "Open menu"}
-              >
-                {open ? (
-                  <XIcon size={36} color={brown} />
-                ) : (
-                  <MenuIcon size={36} color={brown} />
-                )}
-              </Menu.Button>
+        {width <= 767 && (
+          <Menu as="div" className="nav__dropdown">
+            {({ open }) => (
+              <>
+                <Menu.Button
+                  className={`nav__button ${open ? "is-open" : ""}`}
+                  aria-label={open ? "Close menu" : "Open menu"}
+                >
+                  {open ? (
+                    <XIcon size={36} color={brown} />
+                  ) : (
+                    <MenuIcon size={36} color={brown} />
+                  )}
+                </Menu.Button>
 
-              {/* Dropdown panel + animation */}
-              <Transition
-                as={Fragment}
-                enter="dd-enter"
-                enterFrom="dd-enterFrom"
-                enterTo="dd-enterTo"
-                leave="dd-leave"
-                leaveFrom="dd-leaveFrom"
-                leaveTo="dd-leaveTo"
-              >
-                <Menu.Items className="nav__menu">
-                  <MobileMenu />
-                </Menu.Items>
-              </Transition>
-            </>
-          )}
-        </Menu>
-      )}
+                <Transition
+                  as={Fragment}
+                  enter="dd-enter"
+                  enterFrom="dd-enterFrom"
+                  enterTo="dd-enterTo"
+                  leave="dd-leave"
+                  leaveFrom="dd-leaveFrom"
+                  leaveTo="dd-leaveTo"
+                >
+                  <Menu.Items className="nav__menu">
+                    <MobileMenu />
+                  </Menu.Items>
+                </Transition>
+              </>
+            )}
+          </Menu>
+        )}
 
-      {width >= 768 && <LargerMenu />}
+        {width >= 768 && <LargerMenu />}
+      </div>
     </nav>
   );
 }

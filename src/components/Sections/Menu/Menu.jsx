@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Card from "@/components/Sections/FeaturedPies/components/Card/Card";
+import Card from "@/components/ui/components/Card/Card";
 import SectionHeader from "@/components/ui/components/SectionHeader/SectionHeader";
-import Button from "@/components/ui/components/button/Button";
+import Button from "@/components/ui/components/Button/Button";
 import "./Menu.scss";
 import { piesData } from "@/data/data";
 import { useShopifyCart, addToShopifyCart } from "@/hooks/useShopifyCart";
@@ -28,20 +28,22 @@ function Menu() {
           <Button
             variant={"primary"}
             size={"med"}
+            fullWidth
             identity={"savoury"}
             selectedValue={selectedValue}
             onClick={() => setSelectedValue("savoury")}
           >
-            <span className="menu__btnText">Savoury</span>
+            <span className="btn__text">Savoury</span>
           </Button>
           <Button
             variant={"green"}
             size={"med"}
+            fullWidth
             identity={"sweet"}
             selectedValue={selectedValue}
             onClick={() => setSelectedValue("sweet")}
           >
-            <span className="menu__btnText">Sweets</span>
+            <span className="btn__text">Sweets</span>
           </Button>
         </div>
       </div>
@@ -54,6 +56,7 @@ function Menu() {
               img={item.img}
               category={item.category}
               price={item.price}
+              slug={item.slug}
               onAddToCart={() => addToShopifyCart(item.variantId)}
             />
           </li>

@@ -1,17 +1,20 @@
-@use "../../../../../styles/partials/variables" as *;
-@use "../../../../../styles/partials/mixins" as *;
+@use "../../../../styles/partials/variables" as *;
+@use "../../../../styles/partials/mixins" as *;
+@use "sass:color";
+
 .card {
   border-radius: 12px;
-  background-color: white;
+  background-color: #F4ECDE;
   padding-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06), 0 8px 20px rgba(0, 0, 0, 0.07);
 
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
 
   &__imgContainer {
-    height: 210px;
+    aspect-ratio: 4 / 3;
     position: relative;
     overflow: hidden;
 
@@ -30,7 +33,7 @@
     background-image: var(--card-img);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 90%;
+    background-position: 50% 65%;
     transform: scale(1);
     transition: transform 0.3s ease;
     will-change: transform;
@@ -50,6 +53,7 @@
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
+    flex: 1;
     @include desktop-small{
         padding: 2rem;
         gap: 1.5rem;
@@ -84,22 +88,26 @@
 
   &__description {
     font-size: 1.4rem;
-    font-weight: 370;
-    line-height: 1.6rem;
+    font-weight: 400;
+    line-height: 2.1rem;
     @include desktop-small{
         font-size: 1.6rem;
+        line-height: 2.4rem;
     }
   }
 
+  &__addToCartLink {
+    margin-top: auto;
+  }
+
   &__addToCart {
-    margin-top: 0.8rem;
-    width: 100%;
+    max-width: 100px;
     padding: 1rem 1.6rem;
     background-color: $color-caramel;
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.4rem;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.03em;
     border: none;
     border-radius: 12px;
@@ -124,4 +132,5 @@
 // Card lift effect
 .card:hover {
   transform: scale(1.01) translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.10), 0 20px 40px rgba(0, 0, 0, 0.09);
 }

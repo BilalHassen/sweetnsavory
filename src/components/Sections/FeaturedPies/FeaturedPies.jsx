@@ -1,7 +1,7 @@
 import "./FeaturedPies.scss";
 // Use alias import so moving this file won't break paths
 import { piesData } from "@/data/data";
-import Card from "./components/Card/Card";
+import Card from "@/components/ui/components/Card/Card";
 import SectionHeader from "@/components/ui/components/SectionHeader/SectionHeader";
 function FeaturedPies() {
   const featuredPies = piesData.filter((pie) => pie.isFeatured);

@@ -6,7 +6,7 @@ import InfoCard from "@/components/ui/components/InfoCard/InfoCard";
 import CardStructure from "@/components/ui/components/CardStructure/CardStructure";
 import {  FaMapMarkerAlt, } from "react-icons/fa";
 // Use one consistent alias style for UI components
-import Button from "@/components/ui/components/button/Button";
+import Button from "@/components/ui/components/Button/Button";
 function Contact() {
   const address = "140 Adelaide St E, Toronto, ON";
   const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(

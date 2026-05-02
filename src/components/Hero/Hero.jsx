@@ -1,5 +1,5 @@
 import "./Hero.scss";
-import Button from "../ui/components/button/Button";
+import Button from "../ui/components/Button/Button";
 
 function Hero() {
   // Responsive hero images matching your mixin breakpoints
@@ -82,10 +82,10 @@ function Hero() {
               </p>
             </div>
             <div className="hero__btnContainer">
-              <Button variant="primary" size="reg">
+              <Button variant="primary" size="small" href="/#menu">
                 <span className="hero__btn-text">Explore Our Menu</span>
               </Button>
-              <Button variant="white-outline" size="reg">
+              <Button variant="white-outline" size="small" href="/#menu">
                 <span className="hero__btn-text">Order for Pickup</span>
               </Button>
             </div>

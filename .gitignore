@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+codes.md
+memory/
+.playwright-mcp/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

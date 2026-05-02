@@ -7,13 +7,13 @@
 
 html,
 body {
-  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  overflow-x: clip; /* clip doesn't create a new scroll container, so position:sticky works */
 }
 
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  scroll-padding-top: 140px;
+  scroll-padding-top: 90px;
 
   @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
@@ -34,6 +34,7 @@ h4,
 h5,
 h6 {
   font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-weight: 500;
   color: $color-heading;
 }
 
@@ -157,10 +158,6 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-span {
-  z-index: 10;
 }
 
 * {

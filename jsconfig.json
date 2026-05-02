@@ -5,7 +5,8 @@
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@styles/*": ["src/styles/*"],
-      "@hooks/*": ["hooks/*"]
+      "@hooks/*": ["hooks/*"],
+      "@pages/*": ["src/pages/*"]
     }
   },
   "include": ["src", "hooks"]

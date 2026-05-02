@@ -1,8 +1,12 @@
 import React from "react";
-import Button from "@/components/ui/components/button/Button";
+import Button from "@/components/ui/components/Button/Button";
 import "./Card.scss";
-function Card({ name, description, img, category, price, onAddToCart }) {
-  const btnVariant = category === "sweet" ? "primary" : "alternate";
+import { useParams, Link } from "react-router-dom";
+function Card({ name, description, img, category, price, onAddToCart, slug}) {
+
+
+
+  const btnVariant = category === "sweet" ? "green" : "primary";
 
   return (
     <article className="card">
@@ -25,9 +29,9 @@ function Card({ name, description, img, category, price, onAddToCart }) {
         </div>
         <p className="card__description">{description}</p>
         {onAddToCart && (
-          <button className="card__addToCart" onClick={onAddToCart}>
-            Add to cart
-          </button>
+          <Link className="card__addToCartLink" to={`/pies/${slug}`}>
+            <button className="card__addToCart">View Pie</button>
+          </Link>
         )}
       </div>
     </article>

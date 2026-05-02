@@ -1,0 +1,93 @@
+@use "../../../../styles/partials/variables" as *;
+@use "../../../../styles/partials/mixins" as *;
+@use "sass:color";
+
+.btn {
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+
+    &:hover { transform: scale(1.05); }
+
+    &:focus-visible {
+        outline: 2px solid color.change($color-caramel-light, $alpha: 0.9);
+        outline-offset: 3px;
+    }
+}
+
+.btn--outline-orange {
+    background-color: color.change($color-caramel-light, $alpha: 0.3);
+    border: 1px solid $color-caramel-dark;
+    max-width: 25rem;
+    padding: .6rem;
+    border-radius: 40px;
+
+    &:hover { transform: none; }
+
+    @include tablet-small {
+        max-width: 30rem;
+    }
+}
+
+.btn--outline-orange-alt {
+    border: 2px solid $color-caramel-light;
+    color: $color-caramel-light;
+}
+
+.btn--white-outline {
+    border: 1px solid white;
+    color: white;
+
+    &:hover { background-color: $color-sage; }
+}
+
+.btn--primary {
+    background-color: $color-caramel-light;
+    color: white;
+}
+
+.btn--green {
+    background-color: $color-sage;
+    color: white;
+}
+
+.btn--med {
+    min-height: 40px;
+    padding: 0 30px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1;
+
+    @include desktop-small {
+        min-height: 45px;
+    }
+}
+
+// Label wrapper so medium buttons match menu / detail CTAs (desktop type scale).
+.btn__text {
+    color: inherit;
+
+    @include desktop-small {
+        font-size: 1.8rem;
+    }
+}
+
+.btn--full {
+    width: 100%;
+}
+
+.btn--small {
+    padding: 1rem 2.4rem;
+}
+
+.btn--inactive {
+    color: $color-text;
+    opacity: 0.65;
+
+    &:hover { transform: none; }
+}

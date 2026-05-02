@@ -1,0 +1,49 @@
+/* Full-width backgrounds without breaking content out of the layout */
+#about,
+#menu,
+#contact {
+  position: relative;
+}
+
+#about::before,
+#menu::before,
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -100vw;
+  right: -100vw;
+  z-index: -1;
+}
+
+#pies {
+  background-color: #F4ECDE;
+}
+
+#about::before {
+  background-color: #ffffff;
+}
+
+#menu {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#menu::before {
+  background-color: #F4ECDE;
+}
+
+#about {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+#contact {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+#contact::before {
+  background-color: #ffffff;
+}

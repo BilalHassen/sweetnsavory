@@ -1,22 +1,22 @@
 export const menuData = [
   {
     id: 111,
-    link: "#home",
+    link: "/#home",
     title: "Home",
   },
   {
     id: 222,
-    link: "#pies",
+    link: "/#pies",
     title: "Our Pies",
   },
   {
     id: 333,
-    link: "#about",
+    link: "/#about",
     title: "About",
   },
   {
     id: 444,
-    link: "#menu",
+    link: "/#menu",
     title: "Menu",
   },
   {

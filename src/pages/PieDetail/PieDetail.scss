@@ -1,0 +1,258 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "sass:color";
+
+.pieDetail {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+
+  
+
+    @include tablet-small {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 6rem;
+        margin-top: 8rem;
+        margin-bottom: 8rem;
+    }
+    @include desktop-small {
+    
+        margin-top: 12rem;
+        margin-bottom: 12rem;
+    }
+
+  &__lrgContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    flex: 1;
+  }
+
+  &__imgContainer {
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+
+    @include tablet-small {
+      width: 45%;
+      max-width: 500px;
+    }
+    @include desktop-small {
+      width: 40%;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 1.6rem;
+    left: 1.6rem;
+    z-index: 1;
+  }
+
+  &__badgeText {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0px 0px 100px 20px color.change($color-caramel, $alpha: 0.35);
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  // "BAKE OF THE DAY" — small uppercase label above the title
+  &__eyebrow {
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-size: 1.6rem;
+    color: $color-caramel-light;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.8rem;
+  }
+
+  // "Steak Pie" — large serif headline
+  &__title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(3.6rem, 6vw, 5.6rem);
+    font-weight: 500;
+    line-height: 1.05;
+    color: $color-charcoal;
+
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  // "The classic. Slow-braised…" — italic serif tagline
+  &__tagline {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    font-style: italic;
+    font-weight: 400;
+    color: $color-charcoal;
+    line-height: 1.5;
+  }
+
+  // "$8" — oversized light price
+  &__price {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(4rem, 7vw, 6rem);
+    font-weight: 300;
+    color: $color-burgundy;
+    line-height: 1;
+  }
+
+  // "each · GST included" — small label next to price
+  &__priceNote {
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: $color-taupe;
+  }
+
+  // Body description paragraph
+  &__description {
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $color-text;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  &__optionsTitle {
+    margin: 0;
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $color-caramel-light;
+  }
+
+  &__optionsContainer {
+    display: flex;
+    gap: 1.2rem;
+    width: 100%;
+  }
+
+  &__option {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 1.4rem 1.2rem;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid $color-border;
+    background: $color-warm-white;
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
+    &:focus-visible {
+      outline: 2px solid color.change($color-burgundy, $alpha: 0.85);
+      outline-offset: 2px;
+    }
+
+    &--selected {
+      border-width: 2px;
+      border-color: $color-burgundy;
+      background: $color-cream;
+      box-shadow: 0 4px 14px color.change($color-charcoal, $alpha: 0.08);
+    }
+  }
+
+  &__optionTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $color-charcoal;
+  }
+
+  &__optionSubtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: $color-text;
+    opacity: 0.9;
+  }
+
+  &__buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+  }
+
+
+  &__ingredients {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border: 1px solid $color-burgundy;
+    border-radius: 8px;
+    padding: 1.6rem;
+  }
+
+  &__ingredientsTitle {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: $color-caramel-light;
+  }
+
+  &__ingredientsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  &__ingredient {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  &__ingredientIcon {
+    width: 20px;
+    height: 20px;
+    color: $color-burgundy;
+  }
+
+  &__ingredientText {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: $color-text;
+  }
+}
+
+.fresh {
+    background-color: color.change($color-caramel-light, $alpha: 0.2);  
+}
+
+.frozen {
+    background-color: color.change($color-caramel-light, $alpha: 0.2);
+}
+
+

@@ -1,24 +1,31 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 .nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0;
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: $color-bg;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
 
-  @include tablet-small{
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.6rem;
     margin: 0 auto;
-    max-width: 860px;
-    padding-left: 3.4rem;
-    padding-right: 3.4rem;
-  }
+    width: 100%;
 
-  @include desktop-small{
-    max-width: 1600px;
-    padding-left: 8rem;
-    padding-right: 8rem;
+    @include tablet-small {
+      max-width: 860px;
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+
+    @include desktop-small {
+      max-width: 1600px;
+      padding-left: 8rem;
+      padding-right: 8rem;
+    }
   }
 
 
@@ -30,13 +37,12 @@
   }
 
   &__logo {
-    height: 100px;
+    height: 60px;
     width: auto;
     display: block;
 
     @include tablet-small{
-      height: 150px;
-      
+      height: 72px;
     }
 
   }
@@ -104,7 +110,7 @@
   "If opacity or transform changes, animate them over 1 second."
 */
 .dd-enter {
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 /* 
@@ -138,7 +144,7 @@
     when they change during the leave phase.
   */
 .dd-leave {
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 /* 

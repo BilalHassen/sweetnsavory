@@ -48,7 +48,7 @@
       }
 
       &__subTitle {
-        color: #e9aa63;
+        color: $color-caramel-light;
         @include tablet-small{
           font-size: 5rem;
         }
