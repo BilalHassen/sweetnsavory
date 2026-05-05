@@ -1,36 +1,38 @@
-import React from "react";
 import Button from "@/components/ui/components/Button/Button";
 import "./Card.scss";
-import { useParams, Link } from "react-router-dom";
-function Card({ name, description, img, category, price, onAddToCart, slug}) {
+import { Link } from "react-router-dom";
 
-
-
-  const btnVariant = category === "sweet" ? "green" : "primary";
+function Card({ name, description, img, category, price, onAddToCart, slug }) {
+  const isSweet = category === "sweet";
+  const ctaLabel = isSweet ? "View Treat" : "View Pie";
+  const badgeLabel = isSweet ? "Sweet" : "Savoury";
 
   return (
     <article className="card">
-      {/* role="img": tells screen readers this div is an image (needed for CSS background-images) */}
-      {/* aria-label: the alt text screen readers announce since there's no actual <img> */}
+      {/* role="img" + aria-label give the CSS background-image meaningful alt text for screen readers. */}
       <div
         className="card__imgContainer"
         style={{ "--card-img": `url(${img})` }}
         role="img"
         aria-label={`Photo of ${name}`}
       >
-        <Button variant={btnVariant} size={"small"}>
-          <span className="card__btn-text">{category}</span>
+        <Button as="span" variant={isSweet ? "green" : "primary"} size={"small"}>
+          <span className="card__btn-text">{badgeLabel}</span>
         </Button>
       </div>
       <div className="card__textContainer">
         <div className="card__flexContainer">
           <h3 className="card__title">{name}</h3>
-          <p className="card__price">{`$${price}`}</p>
+          <p className="card__price" aria-label={`Price ${price} Canadian dollars`}>{`$${price}`}</p>
         </div>
         <p className="card__description">{description}</p>
-        {onAddToCart && (
-          <Link className="card__addToCartLink" to={`/pies/${slug}`}>
-            <button className="card__addToCart">View Pie</button>
+        {slug && (
+          <Link
+            className="card__addToCart"
+            to={`/pies/${slug}`}
+            aria-label={`${ctaLabel}: ${name}`}
+          >
+            {ctaLabel}
           </Link>
         )}
       </div>

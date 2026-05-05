@@ -96,15 +96,18 @@
     }
   }
 
-  &__addToCartLink {
-    margin-top: auto;
-  }
-
   &__addToCart {
-    max-width: 100px;
+    margin-top: auto;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    max-width: 140px;
     padding: 1rem 1.6rem;
     background-color: $color-caramel;
-    color: #fff;
+    color: #fff !important;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.4rem;
     font-weight: 400;
@@ -121,6 +124,11 @@
 
     &:active {
       transform: translateY(0);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-caramel-dark;
+      outline-offset: 3px;
     }
 
     @include desktop-small {

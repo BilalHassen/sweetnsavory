@@ -23,7 +23,7 @@ export const contactData = [
     id: 1,
     Icon: FaMapMarkerAlt,
     title: "Our Location",
-    info: "140 Adeilaide St East",
+    info: "Stouffville, ON",
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ export const contactData = [
     id: 3,
     Icon: FaEnvelope,
     title: "Email",
-    info: "bilalhassen799@gmail.com",
+    info: "sweetandsavouryca@gmail.com",
   },
 ];
 
@@ -43,8 +43,8 @@ export const storeHoursData = {
   Icon: FaRegClock,
   title: "Store Hours",
   hours: [
-    { id: 1, day: "Monday - Friday", time: "7:00 AM - 7:00 PM" },
-    { id: 2, day: "Saturday", time: "8:00 AM - 8:00 PM" },
-    { id: 3, day: "Sunday", time: "9:00 AM - 5:00 PM" },
+    { id: 1, day: "Monday - Friday", time: "11:00 AM - 8:00 PM" },
+    { id: 2, day: "Saturday", time: "11:00 AM - 6:00 PM" },
+    { id: 3, day: "Sunday", time: "11:00 AM - 6:00 PM" },
   ],
 };

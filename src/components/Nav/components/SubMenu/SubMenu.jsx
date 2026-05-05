@@ -10,11 +10,8 @@ function SubMenu({ data, variant }) {
         } ${menuItem.class ? menuItem.class : ""}`;
 
         const inner =
-          variant && menuItem.class === "phone" ? (
-            <div className={`nav__largeMenu-box`}>
-              <Phone size={24} color="brown" />
-              <p className="nav__largeMenu-text">{menuItem.title}</p>
-            </div>
+          menuItem.class === "phone" ? (
+            <Phone size={22} aria-label={menuItem.title} />
           ) : (
             <p className="nav__largeMenu-text">{menuItem.title}</p>
           );

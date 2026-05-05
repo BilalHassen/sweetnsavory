@@ -13,14 +13,14 @@ function Home() {
       <Layout
         fullBleed={
           <>
-            <section id="home"><Hero /></section>
-            <section id="pies"><FeaturedPies /></section>
+            <Hero />
+            <FeaturedPies />
           </>
         }
       >
-        <section id="about"><About /></section>
-        <section id="menu"><Menu /></section>
-        <section id="contact"><Contact /></section>
+        <About />
+        <Menu />
+        <Contact />
       </Layout>
       <Footer />
     </>

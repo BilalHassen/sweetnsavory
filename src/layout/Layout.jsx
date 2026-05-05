@@ -2,16 +2,19 @@ import Nav from "@components/Nav/Nav";
 
 import "./Layout.scss";
 
-function Layout({children, fullBleed}) {
+function Layout({ children, fullBleed }) {
   return (
     <>
- <Nav/>
- {fullBleed}
-    <div className='layout'>
-        <main className="layout__wrapper">{children}</main>
-    </div>
+      <a className="skip-link" href="#main">Skip to main content</a>
+      <Nav />
+      <main id="main" tabIndex={-1}>
+        {fullBleed}
+        <div className="layout">
+          <div className="layout__wrapper">{children}</div>
+        </div>
+      </main>
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

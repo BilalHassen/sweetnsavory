@@ -56,7 +56,9 @@ function Hero() {
         <div className="hero__overlay" aria-hidden="true" />
         <div className="layout__wrapper">
           <div className="hero__inner">
-            <Button variant="outline-orange">
+            {/* Decorative pill — not a button. Rendered as <span> to avoid
+                announcing as an interactive element to assistive tech. */}
+            <Button as="span" variant="outline-orange">
               <span className="hero__btn-text">
                 Hand Crafted with Love since 1997
               </span>
@@ -76,16 +78,12 @@ function Hero() {
               </h1>
 
               <p className="hero__description">
-                From golden-crusted fruit pies to hearty savory classics, every
-                pie is made fresh daily with locally-sourced ingredients and
-                generations of baking expertise.
+                Hearty savoury classics made fresh daily with locally-sourced
+                ingredients and generations of baking expertise.
               </p>
             </div>
             <div className="hero__btnContainer">
               <Button variant="primary" size="small" href="/#menu">
-                <span className="hero__btn-text">Explore Our Menu</span>
-              </Button>
-              <Button variant="white-outline" size="small" href="/#menu">
                 <span className="hero__btn-text">Order for Pickup</span>
               </Button>
             </div>

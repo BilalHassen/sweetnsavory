@@ -69,10 +69,9 @@ function Footer() {
         <div className="footer__contact">
           <h3 className="footer__title">Contact</h3>
           <ul className="footer__list">
-            <li className="footer__linkItem">140 Adeilaide St East</li>
-            <li className="footer__linkItem">Toronto, ON</li>
+            <li className="footer__linkItem">Stouffville, ON</li>
             <li className="footer__linkItem">(647) 687-7841</li>
-            <li className="footer__linkItem">sweet&savoury@gmail.com</li>
+            <li className="footer__linkItem">sweetandsavouryca@gmail.com</li>
           </ul>
         </div>
 

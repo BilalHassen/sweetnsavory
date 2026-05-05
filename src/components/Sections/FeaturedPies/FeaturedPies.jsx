@@ -16,15 +16,16 @@ function FeaturedPies() {
         />
       <div className="layout__wrapper">
       
-        <ul className="featured__piesList">
-          {featuredPies.map((pie, index) => (
-            <li className="featured__pies" key={index}>
+        <ul className="featured__piesList" role="list">
+          {featuredPies.map((pie) => (
+            <li className="featured__pies" key={pie.slug}>
               <Card
                 name={pie.name}
                 description={pie.description}
                 img={pie.img}
                 category={pie.category}
                 price={pie.price}
+                slug={pie.slug}
               />
             </li>
           ))}

@@ -3,7 +3,7 @@ import SubMenu from "@components/Nav/components/SubMenu/SubMenu";
 import useWidth from "@hooks/useWidth";
 
 function LargerMenu() {
-  const menuDataSectionOne = menuData.slice(0, 5);
+  const menuDataSectionOne = menuData.slice(0, 4);
 
   const width = useWidth();
 

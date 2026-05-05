@@ -45,6 +45,10 @@
       height: 72px;
     }
 
+    @include desktop-small {
+      height: 90px;
+    }
+
   }
 
   &__dropdown {

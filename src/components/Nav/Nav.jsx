@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Menu as MenuIcon, X as XIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 import MobileMenu from "@components/Nav/components/MobileMenu/MobileMenu";
 import useWidth from "@hooks/useWidth";
 import LargerMenu from "@components/Nav/components/LargerMenu/LargerMenu";
@@ -13,11 +14,17 @@ function Nav() {
   const width = useWidth();
 
   return (
-    <nav className="nav">
+    <nav className="nav" aria-label="Primary">
       <div className="nav__inner">
-        <a className="nav__brand" href="/" aria-label="Sweet & Savory Home">
-          <img className="nav__logo" src={logoSrc} alt="Sweet & Savory logo" />
-        </a>
+        <Link className="nav__brand" to="/" aria-label="Sweet & Savoury — home">
+          <img
+            className="nav__logo"
+            src={logoSrc}
+            alt="Sweet & Savoury — South African pies"
+            width="200"
+            height="80"
+          />
+        </Link>
 
         {width <= 767 && (
           <Menu as="div" className="nav__dropdown">

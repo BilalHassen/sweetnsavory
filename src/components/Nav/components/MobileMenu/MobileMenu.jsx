@@ -11,31 +11,22 @@ function MobileMenu() {
           <Menu.Item key={menuItem.id}>
             {({ active }) => (
               menuItem.link ? (
-                <a href={menuItem.link} className="nav__item">
-                  <p className={`nav__item-text ${active ? "is-active" : ""}`}>{menuItem.title}</p>
+                <a href={menuItem.link} className={`nav__item ${menuItem.class ? menuItem.class : ""}`}>
+                  {menuItem.class === "phone" ? (
+                    <Phone size={22} color={brown} aria-label={menuItem.title} />
+                  ) : (
+                    <p className={`nav__item-text ${active ? "is-active" : ""}`}>{menuItem.title}</p>
+                  )}
                 </a>
               ) : (
-                <button className={`nav__item  ${menuItem.class ? menuItem.class : ""}`}>
-                  {menuItem.class === "phone" ? (
-                    <div className="nav__phoneWrapper">
-                      <Phone size={24} color={brown} />
-                      <p
-                        className={`nav__item-text ${
-                          active && !menuItem.class ? "is-active" : ""
-                        } ${menuItem.class ? menuItem.class : ""}`}
-                      >
-                        {menuItem.title}
-                      </p>
-                    </div>
-                  ) : (
-                    <p
-                      className={`nav__item-text ${
-                        active && !menuItem.class ? "is-active" : ""
-                      } ${menuItem.class ? menuItem.class : ""}`}
-                    >
-                      {menuItem.title}
-                    </p>
-                  )}
+                <button className={`nav__item ${menuItem.class ? menuItem.class : ""}`}>
+                  <p
+                    className={`nav__item-text ${
+                      active && !menuItem.class ? "is-active" : ""
+                    } ${menuItem.class ? menuItem.class : ""}`}
+                  >
+                    {menuItem.title}
+                  </p>
                 </button>
               )
             )}

@@ -25,9 +25,4 @@ export const menuData = [
     title: "(647) 687-7841",
     link: "tel:+16476877841"
   },
-  {
-    id: 777,
-    class: "order",
-    title: "Order Now",
-  },
 ];

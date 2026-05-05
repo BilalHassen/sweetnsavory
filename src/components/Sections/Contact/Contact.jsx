@@ -8,7 +8,8 @@ import {  FaMapMarkerAlt, } from "react-icons/fa";
 // Use one consistent alias style for UI components
 import Button from "@/components/ui/components/Button/Button";
 function Contact() {
-  const address = "140 Adelaide St E, Toronto, ON";
+  const address = "Stouffville, ON";
+  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
   const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
     address
   )}`;
@@ -68,13 +69,13 @@ function Contact() {
           <h3 className="contact__mapTitle">Find Us on the Map</h3>
           <Button
             as="a"
-            href={directionsHref}
+            href={mapsHref}
             target="_blank"
             rel="noreferrer"
-            variant={"outline-orange-alt"}
-            size={"reg"}
+            variant={"primary"}
+            size={"med"}
           >
-            Get Directions
+            Open in Google Maps
           </Button>
         </div>
       </div>
