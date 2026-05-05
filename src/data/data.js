@@ -20,6 +20,7 @@ export const piesData = [
     category: "savoury",
     isFeatured: true,
     variantId: "50715681521911",
+    frozenVariantId: "50737841701111",
   },
   {
     slug: "chicken-pie",
@@ -42,6 +43,7 @@ export const piesData = [
     category: "savoury",
     isFeatured: true,
     variantId: "50715697512695",
+    frozenVariantId: "50737850777847",
   },
   {
     slug: "mince-beef-pie",
@@ -64,6 +66,7 @@ export const piesData = [
     category: "savoury",
     isFeatured: false,
     variantId: "50715703410935",
+    frozenVariantId: "50737852809463",
   },
   {
     slug: "spinach-cheese-pie",
@@ -86,6 +89,7 @@ export const piesData = [
     category: "savoury",
     isFeatured: false,
     variantId: "50715703804151",
+    frozenVariantId: "50737855824119",
   },
   {
     slug: "lamington",

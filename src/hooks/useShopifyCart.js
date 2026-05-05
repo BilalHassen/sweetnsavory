@@ -1,14 +1,31 @@
 import { useEffect } from 'react'
 
 const SDK_URL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js'
-const DOMAIN = 'qhznk7-jc.myshopify.com'
-const TOKEN = 'c70daba489071f3d055a367c1545d2c1'
-const COLLECTION_ID = '500044103927'
+
+// Storefront credentials are public by design (read-only, rate-limited).
+// Sourced from Vite env vars so the shop owner can rotate them in Netlify
+// without a code change. Hard-coded fallbacks keep dev builds working
+// when no .env file is present.
+const DOMAIN =
+  import.meta.env.VITE_SHOPIFY_DOMAIN ?? 'qhznk7-jc.myshopify.com'
+const TOKEN =
+  import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN ?? 'c70daba489071f3d055a367c1545d2c1'
+const COLLECTION_ID =
+  import.meta.env.VITE_SHOPIFY_COLLECTION_ID ?? '500044103927'
 
 let sdkPromise = null
 let shopifyClient = null
 let uiRef = null
 let initialized = false
+
+// Resolves once the cart UI is mounted and ready to accept items.
+// Lets `addToShopifyCart` await readiness when a user clicks before the SDK loads.
+let resolveReady
+let rejectReady
+const readyPromise = new Promise((resolve, reject) => {
+  resolveReady = resolve
+  rejectReady = reject
+})
 
 function loadSDK() {
   if (sdkPromise) return sdkPromise
@@ -35,6 +52,25 @@ function getCart() {
 }
 
 export async function addToShopifyCart(variantId, quantity = 1) {
+  if (!variantId) {
+    console.warn('addToShopifyCart called without a variantId')
+    return
+  }
+
+  // Wait up to 8s for the Shopify Buy SDK to finish loading. Covers the case
+  // where a user clicks "Add to cart" while the SDK is still bootstrapping.
+  try {
+    await Promise.race([
+      readyPromise,
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Shopify SDK load timed out')), 8000),
+      ),
+    ])
+  } catch (err) {
+    console.error('Shopify cart unavailable:', err)
+    return
+  }
+
   const cart = getCart()
   if (!shopifyClient || !cart) {
     console.warn('Shopify cart not ready yet — SDK still loading')
@@ -296,6 +332,10 @@ export function useShopifyCart() {
           })
         })
       })
-      .catch((err) => console.error('Shopify init failed:', err))
+      .then(() => resolveReady?.())
+      .catch((err) => {
+        console.error('Shopify init failed:', err)
+        rejectReady?.(err)
+      })
   }, [])
 }

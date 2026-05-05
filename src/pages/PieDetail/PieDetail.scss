@@ -17,11 +17,15 @@
         gap: 6rem;
         margin-top: 8rem;
         margin-bottom: 8rem;
+        max-width: 900px;
+       
     }
     @include desktop-small {
-    
+      margin: 0 auto;
+      gap: 10rem;
         margin-top: 12rem;
         margin-bottom: 12rem;
+        max-width: 1200px;
     }
 
   &__lrgContainer {
@@ -41,7 +45,7 @@
       max-width: 500px;
     }
     @include desktop-small {
-      width: 40%;
+      width: 60%;
     }
   }
 
@@ -202,7 +206,51 @@
   &__buttonsContainer {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 1.2rem;
+  }
+
+  &__stepper {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0.8rem 1.6rem;
+    border: 1px solid $color-border;
+    border-radius: 100px;
+    background: $color-warm-white;
+  }
+
+  &__stepperBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 2rem;
+    line-height: 1;
+    color: $color-charcoal;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: $color-burgundy;
+    }
+  }
+
+  &__stepperCount {
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $color-charcoal;
+    min-width: 1.6rem;
+    text-align: center;
+  }
+
+  &__addBtn {
+    flex: none;
   }
 
 
