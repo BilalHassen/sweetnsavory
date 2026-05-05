@@ -163,7 +163,52 @@
       - Used by Google as the main clickable search result title
       - Should be short and brand-focused
     -->
-    <title>Sweet&Savoury</title>
+    <title>Sweet & Savoury — South African Pies in Stouffville, ON</title>
+
+    <!--
+      Theme color for mobile browser chrome (matches caramel brand color).
+    -->
+    <meta name="theme-color" content="#cf7b17" />
+
+    <!--
+      LocalBusiness / Bakery structured data. Helps Google show shop info
+      (name, address, hours, phone) directly in search results.
+      Update the addressLocality / postalCode once you have a fixed address.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "name": "Sweet & Savoury",
+        "description": "Handcrafted South African pies — sweet classics and savoury favourites baked fresh daily for in-store pickup.",
+        "url": "https://sweetnsavoury.netlify.app/",
+        "image": "https://sweetnsavoury.netlify.app/assets/images/hero.webp",
+        "telephone": "+1-647-687-7841",
+        "email": "sweetandsavouryca@gmail.com",
+        "priceRange": "$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Stouffville",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "11:00",
+            "closes": "20:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday", "Sunday"],
+            "opens": "11:00",
+            "closes": "18:00"
+          }
+        ],
+        "servesCuisine": ["South African", "Bakery"]
+      }
+    </script>
   </head>
 
   <body>

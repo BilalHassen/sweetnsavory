@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Local env files — never commit. `.env.example` IS committed as a template.
+.env
+.env.*
+!.env.example
+
 codes.md
 memory/
 .playwright-mcp/

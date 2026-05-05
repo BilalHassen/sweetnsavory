@@ -1,15 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  sitemap.xml - Tells search engines which pages to index.
-  
-  For SPAs: We have one URL since all content is on a single page.
-  Update <lastmod> when you deploy significant content changes.
+  sitemap.xml — Tells search engines which pages exist and which to crawl.
+  Update <lastmod> when you publish significant content changes.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sweetnsavoury.netlify.app/</loc>
-    <lastmod>2025-01-22</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sweetnsavoury.netlify.app/pies/steak-pie</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sweetnsavoury.netlify.app/pies/chicken-pie</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sweetnsavoury.netlify.app/pies/mince-beef-pie</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sweetnsavoury.netlify.app/pies/spinach-cheese-pie</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sweetnsavoury.netlify.app/pies/lamington</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sweetnsavoury.netlify.app/pies/double-chocolate-cookie</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sweetnsavoury.netlify.app/pies/jam-crumble-tart</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
